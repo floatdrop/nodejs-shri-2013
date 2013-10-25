@@ -24,7 +24,7 @@
                 font-style: italic;
                 src: url(fonts/LibreBaskerville-Italic.otf) format('otf');
             }
-            *  {
+            .cover *  {
                 font-family: Baskerville !important;
             }
     </style>
@@ -98,13 +98,296 @@
     </div></section>
 
 	<section class="slide"><div>
-		<h2>1900 &mdash; 1960</h2>
-		<img src="pictures/FortranCardPROJ039.agr.jpg" class="next" style="position: absolute"/>
-		<img src="pictures/perfocard.jpg" />
+		<img src="pictures/perfocard.png"/>
     </div></section>
 
 	<section class="slide"><div>
 		<img src="pictures/paintcpp.gif" width="95%"/>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Machine codes</h2>
+		<pre>
+			<code>[  op  |  rs |  rt | address/immediate]</code>
+			<code>   35     3     8           68           decimal</code>
+			<code> 100011 00011 01000 00000 00001 000100   binary</code>
+		</pre>
+		<p class="note">before 1949</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Assembler</h2>
+		<pre>
+			<code>	mov ah,9</code>
+			<code>	mov dx,OFFSET Msg</code>
+			<code>	int 21h</code>
+			<code>	int 20h</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>EDSAC – First Bootloader and Assembler</h2>
+		<img src="pictures/EDSAC.jpg" width="300" style="float: right;"/>
+		<pre>
+			<code>PK</code>
+			<code>T64K  - set load address to 64</code>
+			<code>GK - set @-parameter to </br>current load point</code>
+			<code>...</code>
+		</pre>
+		<p class="note">1949</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>EDSAC – First Bootloader and Assembler</h2>
+		<img src="pictures/edsac-1.png" width="80%"/>
+		<p class="note">1949</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Fortran</h2>
+		<pre style="font-size: 50%">
+			<code>	SUBROUTINE PROD(DATA, N)</code>
+			<code>C	MULTIPLY THE ELEMENTS OF DATA</code>
+			<code>C	TOGETHER</code>
+			<code>	REAL PRODCT</code>
+			<code>	PRODCT=1;</code>
+			<code>	IF (N) 9,9,8</code>
+			<code>	DO 9 I=1,N</code>
+			<code>8	DO 9 I=1,N</code>
+			<code>	PRODCT=PRODCT*DATA(I)</code>
+			<code>9	CONTINUE</code>
+			<code>	RETURN PRODCT</code>
+			<code>	END</code>
+		</pre>
+		<p class="note">1954 &mdash; 1957</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>COBOL</h2>
+		<pre>
+			<code>ALTER X TO PROCEED TO Y</code>
+		</pre>
+		<pre>
+			<code>IF SALARY > 9000 OR SUPERVISOR-SALARY OR = PREV-SALARY</code>
+		</pre>
+		<p class="note">1959</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Basic</h2>
+		<pre style="font-size: 80%;">
+			<code>5  LET S = 0</code>
+			<code>10 INPUT V</code>
+			<code>20 LET N = NUM</code>
+			<code>30 IF N = 0 THEN 99</code>
+			<code>40 FOR I = 1 TO N</code>
+			<code>45 LET S = S + V(I)</code>
+			<code>50 NEXT I</code>
+			<code>60 PRINT S/N</code>
+			<code>70 GO TO 5</code>
+			<code>99 END</code>
+		</pre>
+		<p class="note">1964</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Basic</h2>
+		<pre style="font-size: 80%;">
+			<code>5  LET S = 0</code>
+			<code>10 INPUT V</code>
+			<code>20 LET N = NUM</code>
+			<code>30 IF N = 0 THEN 99</code>
+			<code>40 FOR I = 1 TO N</code>
+			<code>45 LET S = S + V(I)</code>
+			<code>50 NEXT I</code>
+			<code>60 PRINT S/N</code>
+			<code>70 <mark class="important">GOTO</mark> 5</code>
+			<code>99 END</code>
+		</pre>
+		<p class="note">1964</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Basic</h2>
+		<pre style="font-size: 80%;">
+			<code>5  LET S = 0</code>
+			<code>10 <mark class="important">INPUT</mark> V</code>
+			<code>20 LET N = NUM</code>
+			<code>30 IF N = 0 THEN 99</code>
+			<code>40 FOR I = 1 TO N</code>
+			<code>45 LET S = S + V(I)</code>
+			<code>50 NEXT I</code>
+			<code>60 PRINT S/N</code>
+			<code>70 GO TO 5</code>
+			<code>99 END</code>
+		</pre>
+		<p class="note">1964</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>ALGOL 68</h2>
+		<pre style="font-size: 60%;">
+			<code>mode, op, prio, proc,</code>
+			<code>flex, heap, loc, long, ref, short,</code>
+			<code>bits, bool, bytes, char, compl, int, real, sema, string, void,</code>
+			<code>channel, file, format, struct, union,</code>
+			<code>co "¢", comment "¢", pr, pragmat,</code>
+			<code>case ~ in ~ ouse ~ in ~ out ~ esac "( ~ | ~ |: ~ | ~ | ~ )",</code>
+			<code>for ~ from ~ to ~ by ~ while ~ do ~ od,</code>
+			<code>if ~ then ~ elif ~ then ~ else ~ fi "( ~ | ~ |: ~ | ~ | ~ )",</code>
+			<code>par begin ~ end "( ~ )", go to, goto, exit.</code>
+		</pre>
+		<p class="note">1968</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>ALGOL 68 (и потом Pascal)</h2>
+		<pre style="font-size: 60%;">
+			<code>mode, op, prio, proc,</code>
+			<code>flex, heap, loc, long, ref, short,</code>
+			<code>bits, bool, bytes, char, compl, int, real, sema, string, void,</code>
+			<code>channel, file, format, struct, union,</code>
+			<code>co "¢", comment "¢", pr, pragmat,</code>
+			<code>case ~ in ~ ouse ~ in ~ out ~ esac "( ~ | ~ |: ~ | ~ | ~ )",</code>
+			<code>for ~ from ~ to ~ by ~ while ~ do ~ od,</code>
+			<code>if ~ then ~ elif ~ then ~ else ~ fi "( ~ | ~ |: ~ | ~ | ~ )",</code>
+			<code>par <mark class="important">begin</mark> ~ <mark class="important">end</mark> "( ~ )", go to, goto, exit.</code>
+		</pre>
+		<p class="note">1968</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>BCPL и B</h2>
+		<pre style="font-size: 60%;">
+			<code>LET START() = VALOF $(</code>
+			<code>        ALL := 1</code>
+			<code>        FOR I = 1 TO 12 DO $(</code>
+			<code>                COUNT := 0</code>
+			<code>                TRY(0, 0, 0)</code>
+			<code>                WRITEF("%I2-QUEENS PROBLEM HAS %I5 SOLUTIONS*N", I, COUNT)</code>
+			<code>                ALL := 2 * ALL + 1</code>
+			<code>        )$</code>
+			<code>        RESULTIS 0</code>
+			<code>)$</code>
+		</pre>
+		<p class="note">1967, 1969</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>BCPL и B</h2>
+		<pre style="font-size: 60%;">
+			<code>printn(n,b) {</code>
+			<code>        extrn putchar;</code>
+			<code>        auto a;</code>
+			<code></code>
+			<code>        if(a=n/b) /* assignment, not test for equality */</code>
+			<code>                printn(a, b); /* recursive */</code>
+			<code>        putchar(n%b + '0');</code>
+			<code>}</code>
+		</pre>
+		<p class="note">1967, 1969</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>C</h2>
+		<pre style="font-size: 60%;">
+			<code>/* int */ calling_function() {</code>
+			<code>    long test1;</code>
+			<code>    register /* int */ test2;</code>
+			<code>    test1 = some_function();</code>
+			<code>    if (test1 > 0)</code>
+			<code>          test2 = 0;</code>
+			<code>    else</code>
+			<code>          test2 = other_function();</code>
+			<code>    return test2;</code>
+			<code>}</code>
+		</pre>
+		<p class="note">1969 &mdash; 1973</p>
+	</div></section>
+
+	<section class="slide"><div style="text-align: center;">
+	<a href="http://www.levenez.com/lang/lang.pdf">
+		<img src="pictures/langs.png" width="130%"/><br/><br/>
+		http://www.levenez.com/lang/lang.pdf
+	</a>
+	</div></section>
+	
+	<section class="slide"><div style="text-align: center;">
+	<a href="http://www.levenez.com/lang/lang.pdf">
+		<img src="pictures/langs_zoomin.png" width="130%"/><br/><br/>
+		http://www.levenez.com/lang/lang.pdf
+	</a>
+	</div></section>
+
+	<section class="slide"><div style="text-align: center;">
+	<img src="pictures/langs1.png" width="100%"/>
+	</div></section>
+	
+	<section class="slide"><div style="text-align: center;">
+	<img src="pictures/langs.png" width="150%"/>
+	</div></section>
+
+	<section class="slide"><div style="text-align: center;">
+	<img src="pictures/langs_zoomin2.png" width="150%"/>
+	</div></section>
+
+	<section class="slide"><div style="text-align: center;">
+	<img src="pictures/langs2.png" width="100%"/>
+	</div></section>
+
+	<section class="slide"><div style="text-align: center;">
+	<img src="pictures/langs2_1.png" width="100%"/>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Smalltalk</h2>
+		<pre>
+			<code>a < b</code>
+			<code>	ifTrue: [^'a is less than b']</code>
+			<code>	ifFalse: [^'a is greater than or equal to b']</code>
+		</pre>
+		<p class="note">1969 &mdash; 1972</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Self</h2>
+		<ol>
+			<li>Prototype based language - нет классов, только объекты</li>
+			<li class="next">JIT</li>
+			<li class="next">Garbage collection</li>
+		</ol>
+		<p class="note">1987 (Java: 1995)</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>HyperTalk и HyperCards</h2>
+		<p class="note">1987</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>HyperTalk и HyperCards</h2>
+		<p style="text-align: center">
+			<img src="pictures/HyperCardTop.gif"/>
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>HyperTalk и HyperCards</h2>
+		<p style="text-align: center">
+			<img src="pictures/hypercard_montage2.jpg" width="90%"/>
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>HyperTalk и HyperCards</h2>
+		<pre>
+			<code>on mouseUp</code>
+			<code>   repeat with i = 1 to the number of card fields</code>
+			<code>     hide field i</code>
+			<code>   end repeat</code>
+			<code>end mouseUp</code>
+		</pre>
+		<p class="note">1987</p>
 	</div></section>
 
 	<div class="progress"><div></div></div>
