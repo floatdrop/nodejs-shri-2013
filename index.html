@@ -24,7 +24,7 @@
                 font-style: italic;
                 src: url(fonts/LibreBaskerville-Italic.otf) format('otf');
             }
-            .cover *  {
+            .cover h2, .cover p  {
                 font-family: Baskerville !important;
             }
     </style>
@@ -60,28 +60,36 @@
 		</style>
 	</div></section>
 
-	<section class="slide cover" id="Cover2"><div>
+	<section class="slide cover sea" id="Cover2"><div>
 		<h2>Node.JS</h2>
 		<p>JavaScript на сервере</p>
 		<img src="pictures/sea.png" width="100%"/>
 		<style>
-            #Cover2 {
-                background: #FFFFFF;
+            .cover.sea {
+                background: #FFF;
+                color: #FFF;
             }
-			#Cover2 h2 {
+            .cover.sea code {
+                background: #FFF;
+                border-radius: 5px;
+                color: #000;
+                margin: -5px;
+                padding: 0px 55px;
+            }
+			.cover.sea h2 {
 				margin:30px 0 0;
 				color:#FFF;
 				text-align:center;
 				font-size:100px;
 				}
-			#Cover2 p {
+			.cover.sea p {
 				margin:10px 0 0;
 				text-align:center;
 				color:#FFF;
 				font-style:italic;
 				font-size:50px;
 				}
-				#Cover p a {
+				.cover.sea p a {
 					color:#FFF;
 					}
 		</style>
@@ -410,7 +418,7 @@
 
 	<section class="slide"><div>
 		<h2>Project Xanadu и WWW</h2>
-		<p>Xanadu - первая концепция гипертекста, созданной программистом Тедом Нельсоном в 1960 году</p>
+		<p>Xanadu - первая концепция гипертекста, созданной Тедом Нельсоном в 1960 году</p>
 		<p class="next">Реализация вышла 1998. <span class="next">Немного поздновато.</span></p>
 	</div></section>
 
@@ -432,6 +440,12 @@
 	</div></section>
 
 	<section class="slide"><div>
+		<h2>WWW</h2>
+		<p>Mosaic (Netscape) vs Spyglass (aka IE by MS)</p>
+		<p class="note">1991</p>
+	</div></section>
+
+	<section class="slide"><div>
 		<h2>Netscape</h2>
 		<img src="pictures/aik.jpg" style="float: right;" width="50%"/>
 		<figure>
@@ -440,12 +454,167 @@
             </blockquote>
             <figcaption>Брендан Айк</figcaption>
         </figure>
+        <p class="note">4 апреля 1994 / май 1994</p>
 	</div></section>
 
 	<section class="slide"><div>
 		<h2>JavaScript</h2>
 		<p>= Java + Scheme + Self</p>
-		<p class="next">Был разработан за пару недель.</p>
+		<p class="next">Был разработан за "пару недель" &mdash; September 1995 релиз в Netsacpe 2.0</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>JavaScript</h2>
+		<pre>
+			<code>window.onload = function() {</code>
+			<code>    var linkWithAlert = document.getElementById("alertLink");</code>
+			<code>    linkWithAlert.onclick = function() {</code>
+			<code>        return confirm('Вы уверены?');</code>
+			<code>    };</code>
+			<code>};</code>
+		</pre>
+		<p class="note" style="position: relative; top: -50px;">Так и жили на стороне браузера до &lt;sarcasm&gt;<b style="color: red">2009</b>&lt;/sarcasm&gt; года</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>JavaScript - выход за браузер</h2>
+		<p class="next">1998 &mdash; Windows Host Script в Windows 98</p>
+		<pre style="font-size: 75%" class="next">
+			<code>var fso = new ActiveXObject("Scripting.FileSystemObject");</code>
+			<code>var a = fso.CreateTextFile("c:\\testfile.txt", true);</code>
+			<code>a.WriteLine("This is a test.");</code>
+			<code>a.Close();</code>
+		</pre>
+		<p class="next">December 1994 &mdash; Netscape Enterprise Server</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Прошло немного времени</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>AJAX</h2>
+		<pre class="next">
+			<code>xmlhttp = new XMLHttpRequest();</code>
+			<code class="next">xmlhttp.onreadystatechange = function { /* ... */ };</code>
+			<code>xmlhttp.open("GET","ajax_info.txt",true);</code>
+			<code>xmlhttp.send();</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>AJAX</h2>
+		<pre>
+			<code>xmlhttp = new XMLHttpRequest();</code>
+			<code>xmlhttp.<mark class="important">onreadystatechange</mark> = function { /* ... */ };</code>
+			<code>xmlhttp.open("GET","ajax_info.txt",true);</code>
+			<code>xmlhttp.send();</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>AJAX</h2>
+		<pre>
+			<code><mark class="important">xmlhttp</mark> = new XMLHttpRequest();</code>
+			<code>xmlhttp.onreadystatechange = <mark class="important">function</mark> { <br/>alert(xmlhttp.responseText); </br>};</code>
+			<code>xmlhttp.open("GET","ajax_info.txt",true);</code>
+			<code>xmlhttp.send();</code>
+		</pre>
+		<p>О хвала вам, чудесные замыкания!</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>2008</h2>
+		<p style="text-align: center; position: relative; left: 25px;">
+		<img src="pictures/v8.png" width="60%"/>
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>JavaScript - движки</h2>
+		<ol>
+			<li>Rhino - developed entirely in Java</li>
+			<li class="next">SpiderMonkey (code name), the first ever JavaScript engine, written by Brendan Eich at Netscape Communications</li>
+			<li class="next">JavaScriptCore - open source, marketed as Nitro and developed by Apple for Safari</li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Серверные языки и фреймворки</h2>
+		<ol>
+			<li>Python - Twisted (тоже асинхронный, 2002)</li>
+			<li class="next">Ruby on Rails</li>
+			<li class="next">PHP (Zend Framework)</li>
+			<li class="next">С++</li>
+			<li class="next">Java</li>
+			<li class="next">C#</li>
+			<li class="next">etc...</li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Twisted</h2>
+		<pre style="font-size: 50%;">
+<code>from twisted.internet import reactor</code>
+<code>from twisted.web.server import Site</code>
+<code>from twisted.web.resource import Resource</code>
+<code>import time</code>
+<code><br/></code>
+<code>class ClockPage(Resource):</code>
+<code>    isLeaf = True</code>
+<code>    def render_GET(self, request):</code>
+<code>        return "%s" % (time.ctime(),)</code>
+<code><br/></code>
+<code>resource = ClockPage()</code>
+<code>factory = Site(resource)</code>
+<code>reactor.listenTCP(8880, factory)</code>
+<code>reactor.run()</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>И потом настал Node.JS</h2>
+		<p class="note">2009</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Но сначала бенчмарк V8</h2>
+		<pre style="font-size: :;%">
+<code>class Primes:</code>
+
+<code>    def isPrimeDivisible(self, candidate):</code>
+<code>        for i in range(1, self.prime_count - 1):</code>
+<code>            if (candidate % self.primes[i]) == 0:</code>
+<code>                return True</code>
+<code>        return False</code>
+<code></code>
+<code>while p.getPrimeCount() &lt; 5000:</code>
+<code>    if not p.isPrimeDivisible(c):</code>
+<code>        p.addPrime(c)</code>
+<code>    c += 1</code>
+		</pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="pictures/results1.png" width="100%"/>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="pictures/results2.png" width="100%"/>
+	</div></section>
+	
+	<section class="slide cover sea"><div>
+		<h2>Node.JS</h2>
+		<div class="bg">
+		<pre>
+			<code>var http = require("http");</code>
+			<code>function callback(request, response) {</code>
+			<code>    response.end("Hello World");</code>
+			<code>};</code>
+			<code>var server = http.createServer(callback).listen(8080);</code>
+		</pre>
+		</div>
+		<img src="pictures/sea.png" width="100%"/>
 	</div></section>
 
 	<div class="progress"><div></div></div>
