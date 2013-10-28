@@ -1,0 +1,71 @@
+Ryan Dahl
+
+2009
+
+http://upload.wikimedia.org/wikipedia/commons/0/0a/Alexander_horned_sphere.png
+
+Math student - Algebra topology. After 3 years - wtf am i doing here!?
+At the end of the day - "what am i doing with my life".
+
+Moved to south america, find apartment with students.
+
+Tryed find job for teaching English. But not successful
+
+Then he met PHP programmer. (near 2006)
+
+In this time Rails was gain popularity.
+
+Then he realized, that his sites was slow and using many CPU time.
+
+Many people tryed reorganize Ruby code for optimize it.
+
+But problem was not in language (of course you can use cache and LB, but...).
+
+Problem was, that Rails puts a global lock for incoming request, and doing nothing
+with other requests - so it was a single threaded program.
+
+------------------
+
+At this time Ajax gained popular.
+
+People was uploading files to server.
+
+And uploading big files with POST was pain - all freezes.
+
+So 
+
+==================
+
+Node stands primarly for solving upload file problem.
+
+First way - hitting server with AJAX (but its heavy)
+
+Second way - long pooling.
+
+**Idea of long pooling**
+
+So Ryan whants a server optimized for this behaviour.
+
+Сначала была переписать thin для ruby, только на libev.
+
+Потом был проект ab для ruby. Но ruby был медленный - сервер был написан 50/50 
+на с++ и ruby. Но если он добавлял строчку кода на ruby в сервер - он становился
+медленнее на 5%. Переписывал на c++ - +5%.
+
+Итак Ruby был заброшен. Была попытка написать весь веб сервер на C. Но веб 
+разработчики были не в восторге от разработки на C.
+
+Он смотрел на Python, Lua, Haskell.
+
+И уже в этот момент (тра татата) была идея сделать non-blocking веб сервер -
+т.е. отказаться от GIL и проблем связанных с решением мультипоточных проблем.
+
+(2008) Все что надо - это хорошо справляться с вызовом функций. И - о господи! - JavaScript.
+
+Anonymus functions, clousers, ...
+
+Но небыло способа почитать файлы, послушать сокет и так далее. Небыло библиотек,
+которые это позволяли. V8 - позволял функции, математику, но не сокеты.
+
+И он начал работать над Node в течении 6 месяцев. Как раз к JSConf (nov 2009)
+он успел сделать сервер и irc чат.
