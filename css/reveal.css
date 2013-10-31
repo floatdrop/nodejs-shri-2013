@@ -185,7 +185,7 @@ body {
 	opacity: 1;
 }
 	.reveal .slides section .fragment.highlight-red.visible {
-		color: #ff2c2d
+		color: #ff2c2d;
 	}
 	.reveal .slides section .fragment.highlight-green.visible {
 		color: #17ff2e;
