@@ -34,15 +34,31 @@
 	width: 100px;
 	z-index: 10000;
 }
-#paint {
+section #paint {
 	background: 0 0 url(imgs/paintcpp_still.gif) no-repeat;
 	height: 400px;
 	width: 904px;
-	position: absolute; 
-	left: 0px;
 }
-#paint.visible {
+section.present #paint {
 	background: 0 0 url(imgs/paintcpp.gif) no-repeat;	
+}
+pre code {
+	padding: 10px !important;
+
+}
+pre code {
+	counter-reset: linecounter;
+}
+pre code > span.line {
+	counter-increment: linecounter;
+}
+pre code > span.line:before {
+	content: counter(linecounter);
+	width: 1em;
+	display: inline-block;
+	text-align: right;
+	padding-right: 1em;
+	opacity: 0.5;
 }
 		</style>
 
@@ -65,7 +81,9 @@
 				</section>
 				
 				<section>
-					<img src="imgs/narkoman.png"/>
+					<h3>Первое знакомство с Node.JS</h3>
+					<br/>
+					<img class="fragment" src="imgs/dafuq.jpg"/>
 				</section>
 
 				<section id="langs-animate-background" 
@@ -83,12 +101,14 @@
 						<h3></h3>
 					</section>
 					<section>
-						<div id="paint" class="fragment"></div>
 						<img src="imgs/perfocard.png" height="360" width="800"/>
 					</section>
 					<section>
+						<div id="paint"></div>
+					</section>
+					<section>
 						<h2>Ассемблер</h2>
-						<pre><code data-trim="" class="avrasm">
+						<pre><code class="avrasm">
 .model tiny
 .code
 .startup
@@ -99,7 +119,9 @@
 	Hello db 'Hello world!$'
 end
 						</code></pre>
-						<img src="imgs/edsac-1.png" width="900" class="fragment"  style="position: absolute; left: 40px; top: 80px;"/>
+					</section>
+					<section>
+						<img src="imgs/edsac-1.png" width="900"/>
 					</section>
 				</section>
 
@@ -147,7 +169,9 @@ end
 						<br/>
 						<a href="http://www.modulecounts.com/">modulecounts.com</a>
 					</section>
-
+					<section>
+                        <h2><a href="http://www.nodeschool.io/">nodeschool.io</a></h2>
+					</section>
 					<section>
 						<h1>Установка</h1>
 						<pre><code class="bash">
@@ -182,14 +206,29 @@ $ curl http://npmjs.org/install.sh | sh
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+					{ src: 'plugin/highlight/highlight.pack.js', async: true, callback: function() { 
 						hljs.initHighlightingOnLoad();
+						linenumbers();
 					} },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 			
+			function linenumbers() {
+				$("pre code").each(function(i, precode) {
+					console.log(precode);
+					var lines = $(precode).text().split(/\n/g);
+					var content = "";
+					for (var k = 0; k < lines.length; k++){
+				 		if($.trim(lines[k]) != "" ){
+							content += "<span class='line'>" + lines[k] + "</span>\n";
+						}
+					}
+					$(precode).html(content);
+				})
+			};
+
 		</script>
 
 	</body>
