@@ -1,235 +1,538 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Node.JS - JavaScript на сервере</title>
+        <title>Node.JS - JavaScript на сервере</title>
 
-		<meta name="description" content="Презентация на ШРИ 2013">
-		<meta name="author" content="Vsevolod Strukchinsky">
+        <meta name="description" content="Презентация на ШРИ 2013">
+        <meta name="author" content="Vsevolod Strukchinsky">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<style>
+        <style>
 .logotype {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	opacity: 0.5;
-	width: 100px;
-	z-index: 10000;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0.5;
+    width: 100px;
+    z-index: 10000;
 }
 section #paint {
-	background: 0 0 url(imgs/paintcpp_still.gif) no-repeat;
-	height: 400px;
-	width: 904px;
+    background: 0 0 url(imgs/paintcpp_still.gif) no-repeat;
+    height: 400px;
+    width: 904px;
 }
 section.present #paint {
-	background: 0 0 url(imgs/paintcpp.gif) no-repeat;	
+    background: 0 0 url(imgs/paintcpp.gif) no-repeat;   
 }
 pre code {
-	padding: 10px !important;
-
+    padding: 10px !important;
+    background-color: rgba(0,0,0,0.7);
 }
 pre code {
-	counter-reset: linecounter;
+    counter-reset: linecounter;
 }
 pre code > span.line {
-	counter-increment: linecounter;
+    counter-increment: linecounter;
 }
 pre code > span.line:before {
-	content: counter(linecounter);
-	width: 1em;
-	display: inline-block;
-	text-align: right;
-	padding-right: 1em;
-	opacity: 0.5;
+    content: counter(linecounter);
+    width: 1em;
+    display: inline-block;
+    text-align: right;
+    padding-right: 1em;
+    opacity: 0.5;
 }
-		</style>
+blockquote i {
+    font-style: normal !important;
+}
+        </style>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<img src="imgs/yandex_eng_logo.png" class="logotype"/>
+        <img src="imgs/yandex_eng_logo.png" class="logotype"/>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1 class="fragment">Node.JS</h1>
-					<h3 style="color: black;"><span class="fragment">JavaScript</span><span class="fragment" style="color: #ba292e;"> на сервере</span></h3>
-				</section>
-				
-				<section>
-					<h3>Первое знакомство с Node.JS</h3>
-					<br/>
-					<img class="fragment" src="imgs/dafuq.jpg"/>
-				</section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1 class="fragment">Node.JS</h1>
+                    <h3 style="color: black;"><span class="fragment">JavaScript</span><span class="fragment" style="color: #ba292e;"> на сервере</span></h3>
+                </section>
+                
+                <section>
+                    <h3>Первое знакомство с Node.JS</h3>
+                    <br/>
+                    <img class="fragment" src="imgs/dafuq.jpg"/>
+                </section>
 
-				<section id="langs-animate-background" 
-						data-background="imgs/langs.png" 
-						data-state="animate-background" 
-						data-transition="linear" 
-						data-background-transition="slide">
-					<section>
-						<h2 style="text-shadow: 0px 5px 10px #000">История JavaScript</h2>
-						<p style="padding-top: 50px;"><a href="http://bit.ly/lang-pdf" class="roll">bit.ly/lang-pdf</a></p>
-					</section>
-					<section>
-						<img src="imgs/crockford-on-javascript.jpg"/>
-						<h3 style="padding-top: 50px;"><a href="http://bit.ly/crcfd" class="roll">bit.ly/crcfd</a></h3>
-						<h3></h3>
-					</section>
-					<section>
-						<img src="imgs/perfocard.png" height="360" width="800"/>
-					</section>
-					<section>
-						<div id="paint"></div>
-					</section>
-					<section>
-						<h2>Ассемблер</h2>
-						<pre><code class="avrasm">
+                <section id="langs-animate-background" 
+                        data-background="imgs/langs.png" 
+                        data-state="animate-background" 
+                        data-transition="linear" 
+                        data-background-transition="slide">
+                    <section>
+                        <h2 style="text-shadow: 0px 5px 10px #000">История JavaScript</h2>
+                        <p style="padding-top: 50px;"><a href="http://bit.ly/lang-pdf" class="roll">bit.ly/lang-pdf</a></p>
+                    </section>
+                    <section>
+                        <img src="imgs/crockford-on-javascript.jpg"/>
+                        <h3 style="padding-top: 50px;"><a href="http://bit.ly/crcfd" class="roll">bit.ly/crcfd</a></h3>
+                        <h3></h3>
+                    </section>
+                    <section>
+                        <img src="imgs/perfocard.jpg"/>
+                    </section>
+                    <section>
+                        <h2>Ассемблер</h2>
+                        <br/>
+                        <pre><code class="avrasm">
 .model tiny
 .code
 .startup
-	mov dx, offset Hello
-	mov ah, 9
-	int 21h
+    mov dx, offset Hello
+    mov ah, 9
+    int 21h
 .exit
-	Hello db 'Hello world!$'
+    Hello db 'Hello world!$'
 end
-						</code></pre>
-					</section>
-					<section>
-						<img src="imgs/edsac-1.png" width="900"/>
-					</section>
-				</section>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <img src="imgs/edsac-1.png" width="900"/>
+                    </section>
+                    <section data-background="imgs/perfocard.png">
+                    </section>
+                    <section>
+                        <div id="paint"></div>
+                    </section>
+                    <section>
+                        <img src="imgs/edsac.jpg" width="900"/>
+                    </section>
+                    <section>
+                        <img src="imgs/ASR-33_1.jpg" />
+                    </section>
+                    <section data-background="imgs/ASRKEYS.jpg">
+                    </section>
+                    <section>
+                        <iframe width="100%" height="100%" src="//www.youtube.com/embed/E4IztV7M3jI#t=15" frameborder="0" allowfullscreen></iframe>
+                    </section>
+                    <section data-background="imgs/fortranbook.png">
+                        <pre><code class="fortran">
+    SUBROUTINE PROD(DATA, N)
+C   MULTIPLY THE ELEMENTS OF DATA
+C   TOGETHER
+    REAL PRODCT
+    PRODCT=1;
+    IF (N) 9,9,8
+    DO 9 I=1,N
+8   DO 9 I=1,N
+    PRODCT=PRODCT*DATA(I)
+9   CONTINUE
+    RETURN PRODCT
+    END                         
+                        </code></pre>
+                    </section>
+                    <section data-background="imgs/fortranbook.png">
+                        <img src="imgs/fortrans_haz_senses.png" width="100%"/>
+                    </section>
+                    <section>
+                        <ul>
+                            <li class="fragment">1959 &mdash; COBOL</li>
+                            <li class="fragment">1964 &mdash; BASIC</li>
+                            <li class="fragment">1968 &mdash; ALGOL 68 и Pascal</li>
+                            <li class="fragment">1969 &mdash; B</li>
+                            <li class="fragment">1972 &mdash; C</li>
+                        </ul>
+                    </section>
+                    <section data-background="imgs/smalltalkbook.png">
+                        <ul class="fragment" style="background: rgba(0, 0, 0, 0.7); padding: 50px;">
+                            <li>Объектно ориентированный</li>
+                            <li class="fragment">Динамическая типизация</li>
+                            <li class="fragment">Сборка мусора</li>
+                            <li class="fragment">Компиляция в байткоды и виртуальная машина</li>
+                            <li class="fragment">1969</li>
+                        </ul>
+                        <aside class="notes">
+                            1986
+                        </aside>
+                    </section>
+                    <section data-background="imgs/smalltalkbook.png">
+                        <pre><code class="smalltalk" style="font-size: 24pt !important; line-height: 24pt;">
+a < b
+    ifTrue: [^'a is less than b']
+    ifFalse: [^'a is not less than b']
+                        </code></pre>
+                    </section>
+                    <section data-background="imgs/macintosh.png">
+                    </section>
+                    <section>
+                        <img src="imgs/hypercard_montage2.jpg"/>
+                    </section>
+                    <section>
+                        <h2>HyperTalk</h2>
+                        <br/>
+                        <pre><code>
+on mouseUp
+   repeat with i = 1 to the number of card fields
+     hide field i
+   end repeat
+end mouseUp
+                        </code></pre>
+                        <p>1980</p>
+                    </section>
+                    <section>
+                        <h2>Self</h2>
+                        <br/>
+                        <blockquote>...two mechanisms, <i>inheritance</i> and <i>delegation</i>, for sharing behavior between related objects in object oriented languages.</blockquote>
+                        <br/>
+                        <a href="http://bit.ly/_proto">bit.ly/_proto</a>
+                        <br/><br/>
+                        <p class="next">1987</p>
+                    </section>
+                </section>
+                
+                <section class="light" data-background="imgs/Timeline_of_web_browsers.png">
+                    <section>
+                        <h1>Война браузеров</h1>
+                    </section>
+                    <section>
+                         <img src="imgs/WorldWideWeb_FSF_GNU.png"/>
+                         <aside class="notes">1990</aside>
+                    </section>
+                    <section>
+                         <img src="imgs/mosaic.6beta.jpg"/>
+                         <aside class="notes">1993 &mdash; 1997</aside>
+                    </section>
+                    <section>
+                         <img src="imgs/Netscape_1_0.gif" height="-1" width="-1"/>
+                         <aside class="notes">1995</aside>
+                    </section>
+                    <section>
+                         <img src="imgs/Internet_Explorer_1.0.png" height="-1" width="-1"/>
+                         <aside class="notes">1995</aside>
+                    </section>
+                    <section>
+                         <img src="imgs/Layout_engine_usage_share-2009-01-07.svg" style="background-color: white;" width="640%" />
+                    </section>
+                    <section>
+                        <h2>JavaScript</h2>
+                        <h4 class="fragment">Разработан за 10 дней</h4>
+                        <h4 class="fragment">Спас нас от VBasic</h4>
+                        <h4 class="fragment">Это чистый ООП язык</h4>
+                    </section>
+                    <section>
+                        <h2>Internet Explorer 5</h2>
+                        <h4 class="fragment">XMLHttpRequest</h4>
+                        <aside class="notes">1999</aside>
+                    </section>
+                </section>
 
-				<section>
-					
-					<section data-background="imgs/sea.png" data-transition="linear" data-background-transition="slide">
-						<h1>Node.JS</h1>
-						<h3>JavaScript на сервере</h3>
-						<h4>since 2009</h4>
-					</section>
-				
-					<section data-background="imgs/ryan_dahl.png">
-						<h1>Ryan Dahl</h1>
-						<p>&nbsp;</p>
-						<blockquote class="fragment" style="background: rgba(0,0,0,.5); padding: 15px;">“I/O has to be done differently.<br/>We are doing it wrong.”</blockquote>
-						<p>&nbsp;</p>
-						<h3><a href="http://bit.ly/jsconf-node">bit.ly/jsconf-node</a></h3>
-					</section>
+                <section>
+                    
+                    <section data-background="imgs/sea.png" data-transition="linear" data-background-transition="slide">
+                        <h1>Node.JS</h1>
+                        <h3>JavaScript на сервере</h3>
+                        <h4>since 2009</h4>
+                    </section>
+                
+                    <section>
+                        <h1>Apache</h1>
+                        <br/>
+                        <img src="imgs/nginx-apache-memory.png" height="315" width="645" class="fragment"/>
+                        <aside class="notes">1995, NSCA httpd server, "a patche"</aside>
+                    </section>
 
-					<section>
-						
-					</section>
+                    <section>
+                        <h1>Nginx</h1>
+                        <br/>
+                        <img src="imgs/nginx-apache-reqs-sec.png" class="fragment"/>
+                        <aside class="notes">Nginx uses an asynchronous event-driven approach to handling requests, instead of the Apache HTTP Server model that defaults[citation needed] to a threaded or process-oriented approach, 2004</aside>
+                    </section>
 
-					<section data-background="imgs/bicycle.jpg">
-						<h1>Pythpn Twisted</h1>
+                    <section data-background="imgs/ryan_dahl.png">
+                        <h1>Ryan Dahl</h1>
+                        <p>&nbsp;</p>
+                        <blockquote class="fragment" style="background: rgba(0,0,0,.5); padding: 15px;">“I/O has to be done differently.<br/>We are doing it wrong.”</blockquote>
+                        <p>&nbsp;</p>
+                        <h3><a href="http://bit.ly/jsconf-node">bit.ly/jsconf-node</a></h3>
+                    </section>
 
-					</section>
+                    <section>
+                        <img src="imgs/waiting.png"/>
+                    </section>
+                    
+                    <section>
+                        <img src="imgs/scaling-threads.png"/>
+                    </section>
 
-					<section 
-						data-background="url(imgs/kantor.png)" 
-						data-background-size="100%"
-						data-transition="linear" 
-						data-background-transition="slide">
-						<h2><a href="http://bit.ly/kantor-node" class="roll">bit.ly/kantor-node</a></h2>
-						<br/><br/><br/><br/>
-					</section>
-				</section>
+                    <section>
+                        <img src="imgs/scaling-processes.png"/>
+                    </section>                  
 
-				<section>
-					<section data-background="#f4f4f2">
-						<img src="imgs/npm.png" height="202" width="518"/>
-					</section>
-					<section>
-						<img src="imgs/modulecounts.png" height="372" width="597"/>
-						<br/>
-						<a href="http://www.modulecounts.com/">modulecounts.com</a>
-					</section>
-					<section>
+                    <section>
+                        <img src="imgs/scaling-event-loop.png"/>
+                    </section>
+
+                    <section>
+                        <img src="imgs/event-loop.png"/>
+                    </section>
+
+                    <section data-background="imgs/bicycle.jpg">
+                        <h1>Python Twisted</h1>
+                        <aside class="notes">2002</aside>
+                    </section>
+
+                    <section>
+                        <h3>Twisted makes it easy to implement custom network applications</h3>
+                        <br/>
+                        <pre><code class="python">
+from twisted.internet import protocol, reactor
+#
+class Echo(protocol.Protocol):
+    def dataReceived(self, data):
+        self.transport.write(data)
+# 
+class EchoFactory(protocol.Factory):
+    def buildProtocol(self, addr):
+        return Echo()
+# 
+reactor.listenTCP(1234, EchoFactory())
+reactor.run()
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>easy to implement</h2>
+                        <br/>
+                        <pre><code class="python">
+def TcpHandler(request, data):
+    request.send(data)
+#
+reactor.listenTCP(1234, TcpHandler);
+reactor.run()
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>JavaScript</h2>
+                        <br/>
+                        <pre><code>
+var http = require('http');
+//
+http.createServer(function(request, response) {
+    request.send(response);
+});
+server.listen(1234);
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h1>Node.JS</h1>
+                        <br/>
+                        <h2 class="fragment">
+                            <img style=" vertical-align: middle; background: none !important;" src="imgs/v8.png" width="300"/><span class="fragment"> + LibEV</span>
+                        </h2>
+                    </section>
+
+                    <section>
+                        <h1>Node.JS</h1>
+                        <br/>
+                        <img src="imgs/nodejs_architecture1.jpg"/>
+                    </section>
+
+                    <section>
+                        <img style=" vertical-align: middle; background: none !important;" src="imgs/v8.png" width="400"/>
+                        <br/>
+                        <a href="http://bit.ly/nfs-js">bit.ly/nfs-js</a>
+                    </section>
+
+                    <section>
+                        <h1>"Простые" тесты</h1>
+                    </section>
+
+                    <section>
+                        <pre><code class="python">
+class Primes:
+    def __init__(self):
+        self.primes = [0] * 5000
+
+    def isPrimeDivisible(self, candidate):
+        for i in range(1, len(self.primes) - 1):
+            if (candidate % self.primes[i]) == 0:
+                return True
+        return False
+
+p = Primes()
+c = 1
+while p.getPrimeCount() &lt; 5000:
+    if not p.isPrimeDivisible(c):
+        p.primes.append(c)
+    c += 1                          
+                        </code></pre>
+                    </section>
+                    <section>
+<h2 class="fragment">C++ x 23.03</h2>
+<h2 class="fragment">v8 x 11.39</h2>
+<h2 class="fragment">Java x 4.17</h2>
+<h2 class="fragment">Ruby x 0.72</h2>
+<h2 class="fragment">Python x 0.33</h2>
+                    </section>
+                    <section>
+                        <h2>C++ x 0.26</h2>
+                        <h2>Java x 0.22</h2>
+                        <h2>v8 x 0.14</h2>
+                        <h2>Ruby x 0.01</h2>
+                        <h2>Python x ???</h2>
+                    </section>
+                    <section>
+                    <pre><code>
+function Primes() {
+        this.primes = new Array(50000);
+        this.isPrimeDivisible = function(candidate) {
+                for (var i = 1; i &lt; this.primes.length; ++i) {
+                    if ((candidate % this.primes[i]) === 0)
+                        return true;
+                }
+                return false;
+        };
+}
+
+p = new Primes();
+var c = 1;
+while (p.getPrimeCount() &lt; 50000) {
+        if (!p.isPrimeDivisible(c)) p.primes.push(c);
+        c++;
+}
+                    </code></pre>
+                    </section>
+                    <section>
+                    <pre><code>
+function Primes() {
+        this.primes = new Array(50000);
+        this.isPrimeDivisible = function(candidate) {
+                for (var i = 1; i &lt; this.primes.length; ++i) {
+/* ************************************************************ */
+if (this.primes[i] * this.primes[i] > candidate) return false;
+/* ************************************************************ */
+                    if ((candidate % this.primes[i]) === 0)
+                        return true;
+                }
+                return false;
+        };
+}
+                    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>C++ x 30.15</h2>
+                        <h2>v8 x 8.22</h2>
+                        <h2>Pypy x 4.47</h2>
+                        <h2>Java x 4.05</h2>
+                        <h2>Ruby x 0.58</h2>
+                        <h2>Python x ???</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <section 
+                        data-background="url(imgs/kantor.png)" 
+                        data-background-size="100%"
+                        data-transition="linear" 
+                        data-background-transition="slide">
+                        <h2><a href="http://bit.ly/kantor-node" class="roll">bit.ly/kantor-node</a></h2>
+                        <br/><br/><br/><br/>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section data-background="#f4f4f2">
+                        <img src="imgs/npm.png" height="480" width="518"/>
+                    </section>
+                    <section>
+                        <img src="imgs/modulecounts.png" height="372" width="597"/>
+                        <br/>
+                        <a href="http://www.modulecounts.com/">modulecounts.com</a>
+                    </section>
+                    <section>
                         <h2><a href="http://www.nodeschool.io/">nodeschool.io</a></h2>
-					</section>
-					<section>
-						<h1>Установка</h1>
-						<pre><code class="bash">
-$ curl http://npmjs.org/install.sh | sh
-						</code></pre>
-					</section>
-				</section>
+                    </section>
+                </section>
 
-			</div>
+            </div>
 
-		</div>
+        </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-		<script src="components/jquery/jquery.min.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="components/jquery/jquery.min.js"></script>
 
-		<script>
+        <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.pack.js', async: true, callback: function() { 
-						hljs.initHighlightingOnLoad();
-						linenumbers();
-					} },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-			
-			function linenumbers() {
-				$("pre code").each(function(i, precode) {
-					console.log(precode);
-					var lines = $(precode).text().split(/\n/g);
-					var content = "";
-					for (var k = 0; k < lines.length; k++){
-				 		if($.trim(lines[k]) != "" ){
-							content += "<span class='line'>" + lines[k] + "</span>\n";
-						}
-					}
-					$(precode).html(content);
-				})
-			};
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.pack.js', async: true, callback: function() { 
+                        hljs.initHighlightingOnLoad();
+                        linenumbers();
+                    } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+            
+            function linenumbers() {
+                $("pre code").each(function(i, precode) {
+                    console.log(precode);
+                    var lines = $(precode).text().split(/\n/g);
+                    var content = "";
+                    for (var k = 0; k < lines.length; k++){
+                        if($.trim(lines[k]) != "" ){
+                            content += "<span class='line'>" + lines[k] + "</span>\n";
+                        }
+                    }
+                    $(precode).html(content);
+                })
+            };
 
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
