@@ -146,3 +146,57 @@ input#nickname {
   color: #FFF;
   text-shadow: inherit;
   width: 5em; }
+
+/*********************************************
+ * CODE
+ *********************************************/
+pre code {
+  padding: 10px !important;
+  background-color: rgba(0, 0, 0, 0.7) !important; }
+
+pre code {
+  counter-reset: linecounter; }
+
+pre code > span.line {
+  counter-increment: linecounter; }
+
+pre code > span.line:before {
+  content: counter(linecounter);
+  width: 1em;
+  display: inline-block;
+  text-align: right;
+  padding-right: 1em;
+  opacity: 0.5; }
+
+/*********************************************
+ * SHADOWS
+ *********************************************/
+.curved-hz {
+  position: relative;
+  padding: 1em;
+  margin: 2em 10px 4em;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+
+.curved-hz:before,
+.curved-hz:after {
+  content: "";
+  position: absolute;
+  z-index: -2; }
+
+.curved-hz:before {
+  top: 50%;
+  bottom: 0px;
+  left: 10px;
+  right: 10px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px; }
+
+.curved-hz p {
+  font-size: 16px;
+  font-weight: bold; }
