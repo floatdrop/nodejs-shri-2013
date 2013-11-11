@@ -172,6 +172,49 @@ pre code > span.line:before {
   opacity: 0.5; }
 
 /*********************************************
+ * ANIMATIONS
+ *********************************************/
+.anim_request_1 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.anim_request_2 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -350px; }
+
+.anim_request_3 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -700px; }
+
+.anim_request_4 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -1050px; }
+
+.anim_request_5 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -1400px; }
+
+/*********************************************
  * SHADOWS
  *********************************************/
 .curved-hz {

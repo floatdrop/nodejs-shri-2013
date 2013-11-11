@@ -82,41 +82,38 @@
 					</section>
 					<section>
 						<h2>index.php</h2>
-						<pre><code style="font-size: 22pt; line-height: 22pt;">/* &#x2191; Много кода &#x2191; */
-
-$result = mysqli_query( $con,
+						<pre><code style="font-size: 22pt; line-height: 22pt;">$result = mysqli_query( $con,
 	"SELECT * FROM Persons");
 
 while($row = mysqli_fetch_array($result)) {
   echo $row['Name']."\n";
 }
 
-/* &#x2193; Много кода &#x2193; */</code></pre>
+file_put_contents("access.log", "Request done")</code></pre>
 					</section>
 					<section>
-						<ol>
-							<li class="fragment" data-fragment-index="1">Приходит запрос (/index.php)</li>
-							<li class="fragment" data-fragment-index="2">Запускается код в index.php</li>
-							<span class="fragment highlight-red" data-fragment-index="6">
-								<li class="fragment" data-fragment-index="3">Управление передается mysql драйверу</li>
-								<li class="fragment" data-fragment-index="4">Сервер получает ответ</li>
-							</span>
-							<li class="fragment" data-fragment-index="5">Сервер отдает страницу</li>
-						</ol>
+						<h2>Однопоточный сервер</h2>
+						<div class="anim_request_1">
+						<div class="anim_request_2 fragment">
+						<div class="anim_request_3 fragment">
+						<div class="anim_request_4 fragment">
+						<div class="anim_request_5 fragment">
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
 					</section>
 					<section>
-						<ol>
-							<li>Приходит запрос (/index.php)</li>
-							<li>Запускается код в index.php</li>
-							<li>Управление передается mysql драйверу</li>
-							<li class="fragment highlight-red">Ждем 200 мс</li>
-							<li>Сервер получает ответ</li>
-							<li>Сервер отдает страницу</li>
-						</ol>
+						<img src="img/latency-bar-graph.png" width="100%"/>
 					</section>
 					<section>
 						<img src="img/2.2-new-features.png" width="80%"/>
 					</section>
+					<section>
+						<h2>Многопоточный сервер</h2>
+						<img src="img/scaling-threads.png"/>
+                    </section>
 					<section>
 						<img src="img/aWZjWe4_460sa.gif" width="100%"/>
 					</section>
@@ -128,14 +125,6 @@ while($row = mysqli_fetch_array($result)) {
                         <h3 class="fragment"><a href="http://bit.ly/jsconf-node">bit.ly/jsconf-node</a></h3>
                     </section>
                     <section>
-						<h2>Однопоточный сервер</h2>
-						<img src="img/waiting.png"/>
-                    </section>
-                    <section>
-						<h2>Многопоточный сервер</h2>
-						<img src="img/scaling-threads.png"/>
-                    </section>
-                    <section>
 						<h2>event-loop сервер</h2>
 						<img src="img/scaling-event-loop.png"/>
                     </section>
@@ -144,6 +133,9 @@ while($row = mysqli_fetch_array($result)) {
                     	<br/><br/>
                     	<a href="http://bit.ly/lxjs2013-node">bit.ly/lxjs2013-node</a>
                     </section>
+				</section>
+				<section>
+
 				</section>
 			</div>
 
