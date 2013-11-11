@@ -13,7 +13,7 @@ body {
 	font-family: $mainFont;
 	font-size: $mainFontSize;
 	font-weight: 200;
-	letter-spacing: -0.02em;
+	letter-spacing: $mainFontLetterSpacing;
 	color: $mainColor;
 }
 
@@ -82,10 +82,10 @@ body {
 
 .reveal section img {
 	margin: 15px 0px;
-	background: rgba(255,255,255,0.12);
-	border: 4px solid $mainColor;
+	// background: rgba(255,255,255,0.12);
+	// border: 4px solid $mainColor;
 
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	// box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
 	-webkit-transition: all .2s linear;
 	   -moz-transition: all .2s linear;
@@ -161,3 +161,16 @@ body {
 	}
 
 
+/*********************************************
+ * INPUTS
+ *********************************************/
+
+input#nickname {
+	background: none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: #FFF;
+	text-shadow: inherit;
+	width: 5em;
+}

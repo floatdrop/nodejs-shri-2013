@@ -2,25 +2,26 @@
 // overridden by the super-theme
 
 // Background of the presentation
-$backgroundColor: #2b2b2b;
+$backgroundColor: #1a8437;
 
 // Primary/body text
-$mainFont: 'Lato', sans-serif;
+$mainFont: 'Palatino Linotype', serif;
 $mainFontSize: 36px;
+$mainFontLetterSpacing: 0.02em;
 $mainColor: #eee;
 
 // Headings
 $headingMargin: 0 0 20px 0;
-$headingFont: 'League Gothic', Impact, sans-serif;
+$headingFont: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
 $headingColor: #eee;
 $headingLineHeight: 0.9em;
-$headingLetterSpacing: 0.02em;
-$headingTextTransform: uppercase;
-$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
+$headingLetterSpacing: -0.02em;
+$headingTextTransform: inherit;
+$headingTextShadow: 0px 3px 3px rgba(0,0,0,0.2);
 $heading1TextShadow: $headingTextShadow;
 
 // Links and actions
-$linkColor: #13DAEC;
+$linkColor: #dad500;
 $linkColorHover: lighten( $linkColor, 20% );
 
 // Text selection
