@@ -1,0 +1,276 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@font-face {
+  font-family: 'Palatino Linotype';
+  src: url("../../lib/font/pala.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15); */
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #1a8437;
+  background: -moz-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1f9a41), color-stop(100%, #1a8437));
+  background: -webkit-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background: -o-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background: -ms-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background: radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background-color: #1a8437; }
+
+.reveal {
+  font-family: "Palatino Linotype", serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.02em;
+  color: #eeeeee; }
+
+::selection {
+  color: white;
+  background: #ff5e99;
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #eeeeee;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  line-height: 0.9em;
+  letter-spacing: -0.02em;
+  text-transform: inherit;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2); }
+
+.reveal h1 {
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2); }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #dad500;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:not(.image):hover {
+  color: #fffb41;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #8d8a00; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #dad500;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #dad500; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #dad500; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #dad500; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #dad500; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #fffb41; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #fffb41; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #fffb41; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #fffb41; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #dad500;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * INPUTS
+ *********************************************/
+input#nickname {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: #FFF;
+  text-shadow: inherit;
+  width: 5em; }
+
+/*********************************************
+ * CODE
+ *********************************************/
+pre code {
+  padding: 10px !important;
+  background-color: rgba(0, 0, 0, 0.7) !important; }
+
+pre code {
+  counter-reset: linecounter; }
+
+pre code > span.line {
+  counter-increment: linecounter; }
+
+pre code > span.line:before {
+  content: counter(linecounter);
+  width: 1em;
+  display: inline-block;
+  text-align: right;
+  padding-right: 1em;
+  opacity: 0.5; }
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+.anim_request_1 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+.anim_request_2 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -350px; }
+
+.anim_request_3 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -700px; }
+
+.anim_request_4 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -1050px; }
+
+.anim_request_5 {
+  width: 1000px;
+  height: 350px;
+  background-color: transparent;
+  background-image: url(../../img/waiting_anim_350.png);
+  background-repeat: no-repeat;
+  background-position: 0 -1400px; }
+
+.reactor-request {
+  width: 1168px;
+  height: 300px;
+  background-color: transparent;
+  background-image: url(../../img/scaling-event-loop-anim_300.png);
+  background-repeat: no-repeat;
+  background-position: -100px 0px; }
+
+.reactor-request .frame-1 {
+  background-position-y: 0px; }
+
+.reactor-request .frame-2 {
+  background-position-y: -300px; }
+
+.reactor-request .frame-3 {
+  background-position-y: -600px; }
+
+.reactor-request .frame-4 {
+  background-position-y: -900px; }
+
+.reactor-request .frame-5 {
+  background-position-y: -1200px; }
+
+.reactor-request .frame-6 {
+  background-position-y: -1500px; }
+
+.reactor-request .frame-7 {
+  background-position-y: -1800px; }
+
+/*********************************************
+ * SHADOWS
+ *********************************************/
+.curved-hz {
+  position: relative;
+  padding: 1em;
+  margin: 2em 10px 4em;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+
+.curved-hz:before,
+.curved-hz:after {
+  content: "";
+  position: absolute;
+  z-index: -2; }
+
+.curved-hz:before {
+  top: 50%;
+  bottom: 0px;
+  left: 10px;
+  right: 10px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px; }
+
+.curved-hz p {
+  font-size: 16px;
+  font-weight: bold; }

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Node.JS - JavaScript со вкусом сервера</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Node.JS</h1>
+					<h2>@<input id="nickname" type="text" value="floatdrop"/></h2>
+				</section>
+				<section>
+					<section>
+						<h1>История</h1>
+						<img src="img/crockford-on-javascript.jpg"/>
+                        <h3 style="padding-top: 50px;"><a href="http://bit.ly/crcfd">bit.ly/crcfd</a></h3>
+					</section>
+					<section data-background="img/applebg.jpeg" data-background-size="200px" data-background-repeat="repeat">
+						<img src="img/hypercard_montage2.jpg"/>
+						<h3>1987</h3>
+					</section>
+					<section data-background="img/lucas.png">
+						<div class="fragment" style="color: #000; padding: 100px 0px; background: radial-gradient(ellipse at center, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 80%)">
+							<p>Был написан за <span class="fragment" style="font-size: 48pt">10</span> дней</p>
+							<p class="fragment">Function as first-class objects</p>
+							<p class="fragment">Расчитан на однопоточность</p>
+						</div>
+						<h2 style="color: #000; position: relative; top: 100px;">1995</h2>
+					</section>
+					<section data-background="img/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg">
+						<img class="fragment" width="300px" src="img/logo-jquery.png"/>
+						<h2 class="fragment" style="margin: 50px;">AJAX</h2>
+						<h2 style="position: relative; top: 100px;">2005</h2>
+					</section>
+					<section data-background="img/Johann_Peter_Krafft_005.jpg">
+						<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 60%)">
+							<h1>Node.JS</h1>
+							<h2 class="fragment">JavaScript на сервере</h2>
+						</div>
+						<h2 style="position: relative; top: 100px;">2009</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Apache + PHP = &#x2764;</h2>
+						<div class="fragment">
+							<div class="curved-hz">
+								<img style="" src="img/wpid-overalld1.png" width="100%"/>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>index.php</h2>
+						<pre><code style="font-size: 22pt; line-height: 22pt;">$result = mysqli_query( $con,
+	"SELECT * FROM Persons");
+
+while($row = mysqli_fetch_array($result)) {
+  echo $row['Name']."\n";
+}
+
+file_put_contents("access.log", "Request done")</code></pre>
+					</section>
+					<section>
+						<h2>Однопоточный сервер</h2>
+						<div class="anim_request_1">
+						<div class="anim_request_2 fragment">
+						<div class="anim_request_3 fragment">
+						<div class="anim_request_4 fragment">
+						<div class="anim_request_5 fragment">
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+					</section>
+					<section>
+						<img src="img/latency-bar-graph.png" width="100%"/>
+					</section>
+					<section>
+						<div class="curved-hz">
+							<img src="img/2.2-new-features.png" />
+						</div>
+					</section>
+					<section>
+						<h2>Многопоточный сервер</h2>
+						<img src="img/scaling-threads.png"/>
+                    </section>
+					<section>
+						<img src="img/aWZjWe4_460sa.gif" width="100%"/>
+					</section>
+					<section data-background="img/ryan_dahl.png">
+                        <h1 class="fragment">Ryan Dahl</h1>
+                        <p>&nbsp;</p>
+                        <blockquote class="fragment" style="background: rgba(0,0,0,.5); padding: 15px;">I/O has to be done differently.<br/>We are doing it wrong</blockquote>
+                        <p>&nbsp;</p>
+                        <h3 class="fragment"><a href="http://bit.ly/jsconf-node">bit.ly/jsconf-node</a></h3>
+                    </section>
+                    <section style="overflow: visible;">
+                    	<h2>event-loop сервер</h2>
+						<div class="reactor-request frame-1">
+						<div class="reactor-request frame-2 fragment">
+						<div class="reactor-request frame-3 fragment">
+						<div class="reactor-request frame-4 fragment">
+						<div class="reactor-request frame-5 fragment">
+						<div class="reactor-request frame-6 fragment">
+						<div class="reactor-request frame-7 fragment">
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+                    </section>
+                    <section>
+						<h2>event-loop сервер</h2>
+						<img src="img/scaling-event-loop.png"/>
+                    </section>
+                    <section>
+                    	<img src="img/timeline-no-task-1.png"/>
+                    	<br/><br/>
+                    	<a href="http://bit.ly/lxjs2013-node">bit.ly/lxjs2013-node</a>
+                    </section>
+				</section>
+				<section>
+					
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="components/jquery/jquery.min.js"></script>
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				backgroundTransition: 'slide',
+				
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+						hljs.initHighlightingOnLoad();
+						linenumbers();
+					} },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+			function linenumbers() {
+                $("pre code").each(function(i, precode) {
+                    console.log(precode);
+                    var lines = $(precode).text().split(/\n/g);
+                    var content = "";
+                    for (var k = 0; k < lines.length; k++){
+                        // if($.trim(lines[k]) != "" ){
+                            content += "<span class='line'>" + lines[k] + "</span>\n";
+                        // }
+                    }
+                    $(precode).html(content);
+                })
+            };
+		</script>
+
+	</body>
+</html>
