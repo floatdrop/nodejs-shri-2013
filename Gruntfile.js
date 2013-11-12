@@ -3,6 +3,9 @@ module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
 	// Project configuration
 	grunt.initConfig({
+        'gh-pages': {
+            src: ['**']
+        },
 		pkg: grunt.file.readJSON('package.json'),
 		meta: {
 			banner:
@@ -117,6 +120,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
+    grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
