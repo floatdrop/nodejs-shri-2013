@@ -166,11 +166,11 @@ file_put_contents("access.log", "Request done")</code></pre>
                     </section>
                     <section>
                         <h2>Console</h2>
-                        <p><input type="button" value="Run" id="connect-console"/></p>
                         <div id="console">
-                            <div id="console-output"></div>
-                            <div id="console-input" contenteditable="true"></div>
+                            <pre id="console-output"></pre>
+                            <pre id="console-input"></pre>
                         </div>
+                        <input type="button" value="Run" id="run-script" style="font-size: 32pt; margin: 0 0 0 auto;"/>
                     </section>
                 </section>
             </div>
@@ -223,27 +223,17 @@ file_put_contents("access.log", "Request done")</code></pre>
                     $(precode).html(content);
                 })
             };
-
-            $("#connect-console").click(function() {
-                var socket = io.connect("ws:" + window.location.href.substring(window.location.protocol.length));
-                socket.on('console-runned', function (data) {
-
+            var socket;
+            $("#run-script").click(function() {
+                socket = io.connect("ws:" + window.location.href.substring(window.location.protocol.length), "console");
+                socket.on('console', function (data) {
+                    if (data.data) {
+                        $("#console-output").append(data.data);
+                    }
                 });
-                socket.on('console-data', function (data) {
-                    
-                });
+                socket.emit('run-console', { nickname: $("#nickname").val() });
             });
 
-            $("#console-output, #console-input, #console").click(function() {
-                $("#console-input").focus();
-            });
-
-            $("#console").keypress(function(e) {
-                if (e.which == 13) {
-                    $("#console-output").append($('#console-input').html());
-                    $("#console-input").html(" ");
-                }
-            });
         </script>
 
     </body>

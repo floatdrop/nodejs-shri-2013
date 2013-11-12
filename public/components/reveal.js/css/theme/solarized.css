@@ -261,18 +261,21 @@ pre code > span.line:before {
 
 /* CONSOLE */
 #console-input {
-  display: inline; }
+  display: inline;
+  font-size: 24pt;
+  line-height: 24pt;
+  clear: both; }
 
 #console-output {
-  display: inline; }
+  display: inline;
+  font-size: 24pt;
+  line-height: 24pt; }
 
 #console {
   width: 800px;
   height: 400px;
-  font-size: 24pt;
   color: white !important;
   background: rgba(0, 0, 0, 0.7);
   margin: auto;
-  font-family: Cabin, monospace;
   text-align: left;
   overflow-y: scroll; }
