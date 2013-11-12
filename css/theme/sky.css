@@ -244,6 +244,7 @@ pre code > span.line:before {
  * SHADOWS
  *********************************************/
 .curved-hz {
+  maring: auto;
   position: relative;
   padding: 1em;
   margin: 2em 10px 4em;
