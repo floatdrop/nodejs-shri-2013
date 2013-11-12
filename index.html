@@ -160,18 +160,54 @@ file_put_contents("access.log", "Request done")</code></pre>
                     -->
 				</section>
 				<section>
-					<section>
+					<!--<section>
 						<h2>Simple web-server</h2>
 						<img src="img/tony-stark.jpg" class="fragment" width="50%"/>
+					</section>-->
+					<section>
+						<h1>Installing</h1>
+						<img src="img/install.png"/>
+						<a href="http://nodejs.org/download/">nodejs.org/download</a>
 					</section>
 					<section>
-						<h2>Console</h2>
-						<p><input type="button" value="Run" id="connect-console"/></p>
-						<div id="console">
-							<div id="console-output"></div>
-							<div id="console-input" contenteditable="true"></div>
-						</div>
+						<h2>Running</h2>
+						<img src="img/console.png" class="console"/>
 					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Modules</h1>
+						<br/>
+						<h3 class="fragment">require(<span style="color: yellow">'antigravity'</span>)</h3>
+					</section>
+					<section>
+						
+					</section>
+				</section>
+
+				<section>
+					<section>
+                        <img src="img/npm.png" />
+                    </section>
+                    <section>
+                    	<div class="curved-hz">
+                        	<img src="img/modulecounts.png" height="372" width="597" style="padding: 20px;"/>
+                        </div>
+                        <br/>
+                        <a href="http://www.modulecounts.com/">modulecounts.com</a>
+                    </section>
+                    <section>
+						<img src="img/console-npm-1.png" class="console">
+                    </section>
+                    <section data-transition="none">
+                    	<h2>Installing module</h2>
+						<img src="img/console-npm-2-1.png" class="console">
+                    </section>
+                    <section data-transition="none">
+                    	<h2>Installing module</h2>
+						<img src="img/console-npm-2-2.png" class="console">
+                    </section>
 				</section>
 			</div>
 
@@ -179,7 +215,6 @@ file_put_contents("access.log", "Request done")</code></pre>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
 		<script src="components/jquery/jquery.min.js"></script>
 		<script>
 
@@ -224,26 +259,6 @@ file_put_contents("access.log", "Request done")</code></pre>
                 })
             };
 
-            $("#connect-console").click(function() {
-				var socket = io.connect("ws:" + window.location.href.substring(window.location.protocol.length));
-				socket.on('console-runned', function (data) {
-
-				});
-				socket.on('console-data', function (data) {
-					
-				});
-            });
-
-            $("#console-output, #console-input, #console").click(function() {
-            	$("#console-input").focus();
-            });
-
-            $("#console").keypress(function(e) {
-            	if (e.which == 13) {
-					$("#console-output").append($('#console-input').html());
-					$("#console-input").html(" ");
-				}
-            });
 		</script>
 
 	</body>
