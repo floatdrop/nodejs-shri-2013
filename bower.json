@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-shri-2013",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "reveal.js": "~2.5.0"
+  }
+}
