@@ -39,7 +39,7 @@
 				</section>
 				<section>
 					<section>
-						<h1>История</h1>
+						<h1>History</h1>
 						<img src="img/crockford-on-javascript.jpg"/>
                         <h3 style="padding-top: 50px;"><a href="http://bit.ly/crcfd">bit.ly/crcfd</a></h3>
 					</section>
@@ -63,7 +63,7 @@
 					<section data-background="img/Johann_Peter_Krafft_005.jpg">
 						<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 60%)">
 							<h1>Node.JS</h1>
-							<h2 class="fragment">JavaScript на сервере</h2>
+							<h2 class="fragment">JavaScript on server</h2>
 						</div>
 						<h2 style="position: relative; top: 100px;">2009</h2>
 					</section>
@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($result)) {
 file_put_contents("access.log", "Request done")</code></pre>
 					</section>
 					<section>
-						<h2>Однопоточный сервер</h2>
+						<h2>Single-thread server</h2>
 						<div class="anim_request_1">
 						<div class="anim_request_2 fragment">
 						<div class="anim_request_3 fragment">
@@ -100,6 +100,7 @@ file_put_contents("access.log", "Request done")</code></pre>
 						</div>
 						</div>
 						</div>
+						<br/><br/>
 						<a href="http://kunkle.org/nodejs-explained-pres/">Pictures from node-explained</a>
 					</section>
 					<section>
@@ -111,7 +112,7 @@ file_put_contents("access.log", "Request done")</code></pre>
 						</div>
 					</section>
 					<section>
-						<h2>Многопоточный сервер</h2>
+						<h2>Multi-thread server</h2>
 						<img src="img/scaling-threads.png"/>
                     </section>
 					<section>
@@ -142,17 +143,71 @@ file_put_contents("access.log", "Request done")</code></pre>
 						</div>
                     </section>
                     <section>
-						<h2>event-loop сервер</h2>
+						<h2>event-loop server</h2>
 						<img src="img/scaling-event-loop.png"/>
                     </section>
+                    <section>
+						<h2>event-loop server</h2>
+						<h3>goes wrong</h3>
+						<img src="img/scaling-event-loop-goes-wrong.png"/>
+                    </section>
+                    <!--
                     <section>
                     	<img src="img/timeline-no-task-1.png"/>
                     	<br/><br/>
                     	<a href="http://bit.ly/lxjs2013-node">bit.ly/lxjs2013-node</a>
                     </section>
+                    -->
 				</section>
 				<section>
-					
+					<!--<section>
+						<h2>Simple web-server</h2>
+						<img src="img/tony-stark.jpg" class="fragment" width="50%"/>
+					</section>-->
+					<section>
+						<h1>Installing</h1>
+						<img src="img/install.png"/>
+						<a href="http://nodejs.org/download/">nodejs.org/download</a>
+					</section>
+					<section>
+						<h2>Running</h2>
+						<img src="img/console.png" class="console"/>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>Modules</h1>
+						<br/>
+						<h3 class="fragment">require(<span style="color: yellow">'antigravity'</span>)</h3>
+					</section>
+					<section>
+						
+					</section>
+				</section>
+
+				<section>
+					<section>
+                        <img src="img/npm.png" />
+                    </section>
+                    <section>
+                    	<div class="curved-hz">
+                        	<img src="img/modulecounts.png" height="372" width="597" style="padding: 20px;"/>
+                        </div>
+                        <br/>
+                        <a href="http://www.modulecounts.com/">modulecounts.com</a>
+                    </section>
+                    <section>
+						<img src="img/console-npm-1.png" class="console">
+                    </section>
+                    <section data-transition="none">
+                    	<h2>Installing module</h2>
+						<img src="img/console-npm-2-1.png" class="console">
+                    </section>
+                    <section data-transition="none">
+                    	<h2>Installing module</h2>
+						<img src="img/console-npm-2-2.png" class="console">
+                    </section>
 				</section>
 			</div>
 
@@ -203,6 +258,7 @@ file_put_contents("access.log", "Request done")</code></pre>
                     $(precode).html(content);
                 })
             };
+
 		</script>
 
 	</body>
