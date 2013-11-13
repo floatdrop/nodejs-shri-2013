@@ -753,6 +753,13 @@ console.log(require('http').globalAgent);</code></pre>
 						<img src="img/console-npm-2-5.png" class="console">
                     </section>
                     <section>
+                    	<h2>Nested dependencies</h2>
+						<h3>pros / cons</h3>
+						<br/>
+							<p class="fragment"> + Version independent</p>
+							<p class="fragment"> - Wieght more</p>
+                    </section>
+                    <section>
                     	<h4>package.json</h4>
 						<pre class="no-lines"><code style="max-height: 1280px; font-size: 18pt; line-height: 18pt">{
   "name": "express",
@@ -780,13 +787,11 @@ console.log(require('http').globalAgent);</code></pre>
 
                     <section>
 						<h2>Express application</h2>
-
-						<pre class="no-lines">
-							<code>var express = require('express');
+						<br/>
+						<pre class="no-lines"><code>var express = require('express');
 var app = express();
 app.get('/', function(req, res) { res.end('Hello!'); });
-app.listen(3000);</code>
-						</pre>
+app.listen(3000);</code></pre>
                     </section>
 				</section>
 
