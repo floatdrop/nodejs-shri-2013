@@ -36,17 +36,40 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Node.JS</h1>
-					<h2>@<input id="nickname" type="text" value="floatdrop"/></h2>
+					<h2>@floatdrop</h2>
+				</section>
+				<section data-background="img/bezishodnost-bg.jpeg">
+					<img src="img/kot-bezishod.jpg" style="zoom: 2"/>
+				</section>
+				<section data-background="img/sea.png">
+					<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0) 50%)">
+						<h1>Node.JS</h1>
+					</div>
 				</section>
 				<section>
-					<section>
+					<section data-background="img/crockford-on-javascript.jpg">
 						<h1>History</h1>
-						<img src="img/crockford-on-javascript.jpg"/>
                         <h3 style="padding-top: 50px;"><a href="http://bit.ly/crcfd">bit.ly/crcfd</a></h3>
 					</section>
 					<section data-background="img/applebg.jpeg" data-background-size="200px" data-background-repeat="repeat">
 						<img src="img/hypercard_montage2.jpg"/>
+						<br/><br/>
+						<h3>1987</h3>
+					</section>
+					<section data-background="img/applebg.jpeg" data-background-size="200px" data-background-repeat="repeat">
+						<pre><code>
+on mouseUp
+	get the selection
+	if it is empty then as "Dial what number?"
+	if it is not empty then
+		push this card
+		visual effect zoom open
+		go to stack "Phone"
+		dial it
+		pop card
+	end if
+end mouseUp
+						</code></pre><br/>
 						<h3>1987</h3>
 					</section>
 					<section data-background="img/lucas.png">
@@ -65,9 +88,13 @@
 					<section data-background="img/Johann_Peter_Krafft_005.jpg">
 						<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 60%)">
 							<h1>Node.JS</h1>
-							<h2 class="fragment">JavaScript on server</h2>
+							<h2>JavaScript on server</h2>
 						</div>
 						<h2 style="position: relative; top: 100px;">2009</h2>
+						<aside class="notes">
+The term Ajax was coined on 18 February 2005 by Jesse James Garrett in an article entitled "Ajax: A New Approach to Web Applications", based on techniques used on Google pages.[1]
+On 5 April 2006, the World Wide Web Consortium (W3C) released the first draft specification for the XMLHttpRequest object in an attempt to create an official web standard.[6]
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -88,7 +115,8 @@ while($row = mysqli_fetch_array($result)) {
   echo $row['Name']."\n";
 }
 
-file_put_contents("access.log", "Request done")</code></pre>
+file_put_contents("access.log", 
+	"Request done")</code></pre>
 					</section>
 					<section>
 						<h2>Single-thread server</h2>
@@ -741,6 +769,31 @@ console.log("A: ", a);</code></pre>
 }
 						</code></pre>
                     </section>
+
+                    <section>
+						<h2>Express application</h2>
+
+						<pre class="no-lines">
+							<code class="javascript fragment">var express = require('express');</code>
+							<code class="javascript fragment">var app = express();</code>
+							<code class="javascript fragment">app.get('/', function(req, res) { res.end('Hello!'); });</code>
+							<code class="javascript fragment">app.listen(3000);</code>
+						</pre>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Event loop</h1>
+						<br/>
+						<img src=""/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Streams</h1>
+					</section>
 				</section>
 			</div>
 
