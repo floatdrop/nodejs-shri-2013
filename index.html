@@ -508,11 +508,132 @@ module.exports = server;</code></pre>
 							<li class="fragment">/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
 						</ol>
 						<br/><br/>
-						<p class="fragment" style="font-size: 12pt;">$HOME/.node_modules, $HOME/.node_libraries, $PREFIX/lib/node</p>
+						<p class="fragment">NODE_PATH</p>
+						<br/>
+						<p class="fragment" style="font-size: 18pt;">$HOME/.node_modules, $HOME/.node_libraries, $PREFIX/lib/node</p>
 					</section>
 
 					<section>
-						<h2>require(<span style="color: yellow">"antigravity"</span>)</h2>
+						<h2>node_modules/antigravity.js</h2>
+						<pre><code>module.exports = new Date();</code></pre>
+						<br/><br/>
+						<h2>index.js</h2>
+						<pre><code>console.log(require("antigravity"));</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-2.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-3.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-4.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-5.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-6.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-7.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/console-require-8.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<h2>node_modules/antigravity.js</h2>
+						<pre><code>console.log(module);
+
+module.exports = new Date();</code></pre>
+					</section>
+
+					<section>
+						<img src="img/console-require-module.png" class="console">
+					</section>
+
+					<section>
+						<img src="img/console-require-module-1.png" class="console">
+					</section>
+
+					<section>
+						<h2>Circular dependencies</h2>
+						<br/>
+						<img src="img/circular-dependencies.png" width="100%"/>
+					</section>
+
+					<section>
+						<h2>Circular dependencies</h2>
+						<br/>
+						<h3>a.js</h3>
+						<pre><code>var b = require('./b.js');
+console.log("B: ", b);</code></pre>
+						<br/>
+						<h3>b.js</h3>
+						<pre><code>var a = require('./a.js');
+console.log("A: ", a);</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-1.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-2.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-3.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-4.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-5.png" class="console">
+					</section>
+
+					<section>
+						<h2>Circular dependencies</h2>
+						<br/>
+						<h3>a.js</h3>
+						<pre><code>module.exports.hello = "Hello from A";
+var b = require('./b.js');
+module.exports.helloFromB = b.hello;
+console.log("B: ", b);</code></pre>
+						<br/>
+						<h3>b.js</h3>
+						<pre><code>module.exports.hello = "Hello from B";
+var a = require('./a.js');
+module.exports.helloFromA = a.hello;
+console.log("A: ", a);</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-6.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-modules-circ-7.png" class="console">
+					</section>
+					
+					<section>
+						<h2>Unfinished copy</h2>
+						<img src="img/node-modules-circ-8.png" class="console">
+					</section>
+
+					<section>
+						<h2>Unfinished copy</h2>
+						<img src="img/node-modules-circ-9.png" class="console">
 					</section>
 				</section>
 
