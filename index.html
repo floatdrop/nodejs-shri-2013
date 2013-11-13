@@ -848,7 +848,7 @@ app.listen(3000);</code>
 					</section>
 
 					<section>
-						<h2>Platform init</h2>
+						<h2>uv__platform_loop_init</h2>
 						<br/>
 						<ul style="font-size: 48pt; line-height: 48pt;">
 							<li>kqueue</li>
@@ -873,6 +873,15 @@ app.listen(3000);</code>
          uv__has_active_reqs(loop) ||
          loop->closing_handles != NULL;
 }</code></pre>
+					</section>
+					<section data-transition="none">
+						<img src="img/event-loop-1.png"/>
+					</section>
+					<section data-transition="none">
+						<img src="img/event-loop-2.png"/>
+					</section>
+					<section data-transition="none">
+						<img src="img/event-loop-3.png"/>
 					</section>
 					<section>
 						<h1>Fibonacci</h1>
