@@ -1039,7 +1039,55 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 					<section data-transition="none">
 						<img src="img/node-crypto-service-6.png" class="console">
 					</section>
+					
+					<section>
+						<h2><span style="color: yellow">Push</span> vs <span style="color: yellow">Pull</span> streams</h2>
+					</section>
 
+					<section data-background="img/malibu_hurricane.jpg">
+						<h2>Pull streams</h2>
+					</section>
+					
+					<section data-background="img/NagarjunaSagarDam.jpg">
+						<h2>Push streams</h2>
+					</section>
+
+					<section data-background="img/san-clemente-dam-noaa.jpg"></section>
+
+					<section>
+						<h2>Streams Node.JS are</h2>
+						<h2 class="fragment">Push</h2>
+					</section>
+
+					<section>
+						<img src="img/streams_chart.png" width="100%"/>
+					</section>
+
+					<section>
+						<h2>Readable stream</h2>
+						<h4><span style="color: yellow">data</span> event</h4>
+						<br/>
+						<pre><code>process.stdin.on('data', 
+function(chunk) {
+    console.log(chunk); 
+});</code></pre>
+					</section>
+
+					<section>
+						<h2>Writeable stream</h2>
+						<h4><span style="color: yellow">write</span> method</h4>
+						<br/>
+						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
+					</section>
+
+					<section>
+						<h2>Writeable stream</h2>
+						<h4><span style="color: yellow">backpressure</span></h4>
+						<br/>
+						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
+						<br/>
+						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: yellow">wait for the <u>drain</u> event before writing more data.</span></p>
+					</section>
 				</section>
 			</div>
 
