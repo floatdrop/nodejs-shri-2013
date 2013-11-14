@@ -42,7 +42,7 @@
 				</section>
 				<section data-background="img/bezishodnost-bg.jpeg">
 					<section><img src="img/kot-bezishod.jpg" style="zoom: 2"/></section>
-					<!--<section><img src="img/uhodi.jpg" width="400"/></section>-->
+					<!--<section><img src="img/uhodi.jpg" width="400"/></section>
 				</section>
 				<section data-background="img/sea.png">
 					<div class="fragment" style="padding: 100px 50px; background: rgba(0,0,0,0.1) 10%">
@@ -292,7 +292,7 @@ file_put_contents("access.log",
 					<section>
 						<h1>Modules</h1>
 						<br/>
-						<h3>require(<span style="color: yellow">'antigravity'</span>)</h3>
+						<h3>require(<span style="color: #da0000">'antigravity'</span>)</h3>
 					</section>
 					
 					<section>
@@ -392,7 +392,7 @@ HelloWorld();</code></pre>
 					</section>
 
 					<section>
-						<h2><span style="color: yellow">exports</span> vs <span style="color: yellow">module.exports</span></h2><br/>
+						<h2><span style="color: #da0000">exports</span> vs <span style="color: #da0000">module.exports</span></h2><br/>
 						<div class="fragment">
 						<h3>russian.js</h3>
 						<pre><code class="javascript" style="font-size: 24pt; line-height: 32pt;">var en_translation = {
@@ -413,7 +413,7 @@ exports = en_translation;</code></pre>
 					</section>
 
 					<section>
-						<h2><span style="color: yellow">exports</span> vs <span style="color: yellow">module.exports</span></h2><br/>
+						<h2><span style="color: #da0000">exports</span> vs <span style="color: #da0000">module.exports</span></h2><br/>
 						<h3>russian.js</h3>
 						<pre><code class="javascript" style="font-size: 24pt; line-height: 32pt;">var en_translation = {
   yes: 'Да',
@@ -432,7 +432,7 @@ module.exports = en_translation;</code></pre>
 					</section>
 
 					<section>
-						<h2><span style="color: yellow">exports</span> vs <span style="color: yellow">module.exports</span></h2><br/>
+						<h2><span style="color: #da0000">exports</span> vs <span style="color: #da0000">module.exports</span></h2><br/>
 						<h3>russian.json</h3>
 						<pre class="no-lines"><code class="json" style="font-size: 24pt; line-height: 32pt;">{
 	"yes": "да",
@@ -453,12 +453,12 @@ module.exports = en_translation;</code></pre>
 					</section>
 
 					<section>
-						<h2>requrie(<span style='color: yellow'>'./directory'</span>)</h2>
+						<h2>requrie(<span style='color: #da0000'>'./directory'</span>)</h2>
 						<br/>
 						<ol reversed>
-							<li class="fragment">require(<span style='color: yellow'>'./directory/index.json'</span>)</li>
-							<li class="fragment">require(<span style='color: yellow'>'./directory/index.js'</span>)</li>
-							<li class="fragment">require(<span style='color: yellow'>'./directory/'</span> + require(<span style='color: yellow'>'./directory/package.json'</span>).main);</li>
+							<li class="fragment">require(<span style='color: #da0000'>'./directory/index.json'</span>)</li>
+							<li class="fragment">require(<span style='color: #da0000'>'./directory/index.js'</span>)</li>
+							<li class="fragment">require(<span style='color: #da0000'>'./directory/'</span> + require(<span style='color: #da0000'>'./directory/package.json'</span>).main);</li>
 						</ol>
 					</section>
 
@@ -576,15 +576,15 @@ module.exports = server;</code></pre>
 					</section>
 
 					<section>
-						<h2>require(<span style="color: yellow">"antigravity"</span>)</h2>
-						<h4>in <span style="color: yellow">/home/user/programm/library/index.js</span></h4>
+						<h2>require(<span style="color: #da0000">"antigravity"</span>)</h2>
+						<h4>in <span style="color: #da0000">/home/user/programm/library/index.js</span></h4>
 						<br/>
 						<ol>
-							<li class="fragment">/home/user/programm/library/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
-							<li class="fragment">/home/user/programm/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
-							<li class="fragment">/home/user/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
-							<li class="fragment">/home/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
-							<li class="fragment">/<span style="color: #00FF00">node_modules</span>/<span style="color: yellow">antigravity</span></li>
+							<li class="fragment">/home/user/programm/library/<span style="color: #00FF00">node_modules</span>/<span style="color: #da0000">antigravity</span></li>
+							<li class="fragment">/home/user/programm/<span style="color: #00FF00">node_modules</span>/<span style="color: #da0000">antigravity</span></li>
+							<li class="fragment">/home/user/<span style="color: #00FF00">node_modules</span>/<span style="color: #da0000">antigravity</span></li>
+							<li class="fragment">/home/<span style="color: #00FF00">node_modules</span>/<span style="color: #da0000">antigravity</span></li>
+							<li class="fragment">/<span style="color: #00FF00">node_modules</span>/<span style="color: #da0000">antigravity</span></li>
 						</ol>
 						<br/><br/>
 						<p class="fragment">NODE_PATH</p>
@@ -874,7 +874,7 @@ app.listen(3000);</code></pre>
 					</section>
 
 					<section>
-						<h2>core.c&nbsp;<span style="color: yellow; font-size: 22pt">:&nbsp;258</span></h2>
+						<h2>core.c&nbsp;<span style="color: #da0000; font-size: 22pt">:&nbsp;258</span></h2>
 						<br/>
 						<pre><code class="cpp">int uv_run(uv_loop_t* loop, uv_run_mode mode) {
 	r = uv__loop_alive(loop);
@@ -1041,7 +1041,7 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 					</section>
 					
 					<!-- <section>
-						<h2><span style="color: yellow">Push</span> vs <span style="color: yellow">Pull</span> streams</h2>
+						<h2><span style="color: #da0000">Push</span> vs <span style="color: #da0000">Pull</span> streams</h2>
 					</section>
 
 					<section data-background="img/malibu_hurricane.jpg">
@@ -1055,7 +1055,7 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 					<section data-background="img/san-clemente-dam-noaa.jpg"></section>
 
 					<section>
-						<h2>Streams in Node.JS are <span class="fragment" style="color: yellow">Push</span></h2>
+						<h2>Streams in Node.JS are <span class="fragment" style="color: #da0000">Push</span></h2>
 					</section>
 
 					<section>
@@ -1069,7 +1069,7 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 
 					<section>
 						<h2>ReadableStream</h2>
-						<h4><span style="color: yellow">data</span> event</h4>
+						<h4><span style="color: #da0000">data</span> event</h4>
 						<br/>
 						<pre><code>process.stdin.on('data', 
 function(chunk) {
@@ -1084,18 +1084,18 @@ function(chunk) {
 
 					<section>
 						<h2>WriteableStream. Methods</h2>
-						<h4><span style="color: yellow">write</span> method</h4>
+						<h4><span style="color: #da0000">write</span> method</h4>
 						<br/>
 						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
 					</section>
 
 					<section>
 						<h2>Writeable stream</h2>
-						<h4><span style="color: yellow">backpressure</span></h4>
+						<h4><span style="color: #da0000">backpressure</span></h4>
 						<br/>
 						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
 						<br/>
-						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: yellow">wait for the <u>drain</u> event before writing more data.</span></p>
+						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: #da0000">wait for the <u>drain</u> event before writing more data.</span></p>
 					</section> -->
 				</section>
 
