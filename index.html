@@ -36,10 +36,13 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>@floatdrop</h2>
+					<h2><span style="color: #FF2222;">@</span>floatdrop</h2>
+					<br/>
+					<a href="http://bit.ly/nodejs-shri">bit.ly/nodejs-shri</a>
 				</section>
 				<section data-background="img/bezishodnost-bg.jpeg">
-					<img src="img/kot-bezishod.jpg" style="zoom: 2"/>
+					<section><img src="img/kot-bezishod.jpg" style="zoom: 2"/></section>
+					<section><img src="img/uhodi.jpg" width="400"/></section>
 				</section>
 				<section data-background="img/sea.png">
 					<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0) 50%)">
@@ -74,11 +77,13 @@ end mouseUp
 					</section>
 					<section data-background="img/lucas.png">
 						<div class="fragment" style="color: #000; padding: 100px 0px; background: radial-gradient(ellipse at center, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 80%)">
-							<p>Был написан за <span class="fragment" style="font-size: 48pt">10</span> дней</p>
+							<p>Расчитан на обработку событий</p>
+							<p class="fragment">Был написан за <span class="fragment" style="font-size: 48pt">10</span> дней</p>
 							<p class="fragment">Function as first-class objects</p>
-							<p class="fragment">Расчитан на однопоточность</p>
+							<p class="fragment">Прототипное наследование из Self</p>
 						</div>
 						<h2 style="color: #000; position: relative; top: 100px;">1995</h2>
+						<aside class="notes">Inheritance modifies the lookup procedure by extending the search to other objects. These objects are located via parent slots, which are a special kind of data slot. Any data slot can be designated a parent, by attaching an asterisk to the slot name.</aside>
 					</section>
 					<section data-background="img/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg">
 						<img class="fragment" width="300px" src="img/logo-jquery.png"/>
@@ -227,6 +232,7 @@ file_put_contents("access.log",
 						<h2>Running</h2>
 						<img src="img/console-3.png" class="console"/>
 					</section>
+					<!--
 					<section data-transition="none">
 						<h2>Running</h2>
 						<img src="img/console-4.png" class="console"/>
@@ -235,7 +241,7 @@ file_put_contents("access.log",
 						<h2>Running</h2>
 						<img src="img/console-5.png" class="console"/>
 					</section>
-
+					-->
 					<section data-transition="none">
 						<h2>windows</h2>
 						<img src="img/console-6.png" class="console"/>
@@ -390,8 +396,8 @@ HelloWorld();</code></pre>
 						<div class="fragment">
 						<h3>russian.js</h3>
 						<pre><code class="javascript" style="font-size: 24pt; line-height: 32pt;">var en_translation = {
-  yes: 'Да',
-  no: 'Нет' 
+  yes: 'Нет',
+  no: 'Да' 
 };
 
 exports = en_translation;</code></pre>
@@ -428,7 +434,7 @@ module.exports = en_translation;</code></pre>
 					<section>
 						<h2><span style="color: yellow">exports</span> vs <span style="color: yellow">module.exports</span></h2><br/>
 						<h3>russian.json</h3>
-						<pre><code class="json" style="font-size: 24pt; line-height: 32pt;">{
+						<pre class="no-lines"><code class="json" style="font-size: 24pt; line-height: 32pt;">{
 	"yes": "да",
 	"no": "нет"
 }</code></pre>
@@ -556,16 +562,16 @@ module.exports = server;</code></pre>
 						<img src="img/console-server-10.png" class="console">
 					</section>
 
-					<section>
-						<h2>Look up</h2>
-						<a href="http://nodejs.org/api/modules.html">nodejs.org/api/modules.html</a>
-						<br/>
-						<img src="img/node-modules-docs.png"/>
+					<section data-background="img/adventure.jpg">
+						<div class="fragment">
+							<h2>Look up</h2>
+							<a href="http://nodejs.org/api/modules.html">nodejs.org/api/modules.html</a>
+							<br/>
+							<img src="img/node-modules-docs.png"/>
+						</div>
 					</section>
 
 					<section>
-						<h2>Look up</h2>
-						<br/>
 						<img src="img/node-modules-docs-2.png"/>
 					</section>
 
@@ -588,10 +594,10 @@ module.exports = server;</code></pre>
 
 					<section>
 						<h2>node_modules/antigravity.js</h2>
-						<pre><code>module.exports = new Date();</code></pre>
+						<pre><code style="font-size: 24pt; line-height: 24pt;">module.exports = new Date();</code></pre>
 						<br/><br/>
 						<h2>index.js</h2>
-						<pre><code>console.log(require("antigravity"));</code></pre>
+						<pre><code style="font-size: 24pt; line-height: 24pt;">console.log(require("antigravity"));</code></pre>
 					</section>
 
 					<section data-transition="none">
@@ -624,7 +630,7 @@ module.exports = server;</code></pre>
 
 					<section data-transition="none">
 						<h2>node_modules/antigravity.js</h2>
-						<pre><code>console.log(module);
+						<pre><code style="font-size: 24pt; line-height: 24pt;">console.log(module);
 
 module.exports = new Date();</code></pre>
 					</section>
@@ -860,6 +866,13 @@ app.listen(3000);</code></pre>
 							<li>epoll</li>
 						</ul>
 					</section>
+
+					<section>
+						<h2>node.cc</h2>
+						<br/>
+						<img src="img/node-cc.png" width="100%"/>
+					</section>
+
 					<section>
 						<h2>core.c&nbsp;<span style="color: yellow; font-size: 22pt">:&nbsp;258</span></h2>
 						<br/>
@@ -946,7 +959,87 @@ Time per request: 3.780 ms</code></pre>
 				<section>
 					<section>
 						<h1>Streams</h1>
+						<br/>
+						<h4 class="fragment">0.10.x</h4>
+						<br/>
+						<a href="http://bit.ly/streams-node">bit.ly/streams-node</a>
 					</section>
+
+					<section>
+						<pre><code style="font-size: 24pt;">$ cut -f 1 | uniq -c | sort -n</code></pre>
+					</section>
+					
+					<section>
+						<h2>Streams in Node.JS</h2>
+						<br/>
+						<ol>
+							<li class="fragment">fs - createReadStream, createWriteStream</li>
+							<li class="fragment">process - stdin, stderr and stdout</li>
+							<li class="fragment">http - client requests, server response</li>
+							<li class="fragment">tcp - sockets</li>
+							<li class="fragment">zlib - createUnzip...</li>
+							<li class="fragment">crypto - createCipher</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2>Crypto service</h2>
+						<br/>
+						<pre><code>var app = require('express')();</code></pre>
+<pre class="fragment"><code>app.get('/:algo/:secret', function(req, res) {
+	// Some magic should be applied here
+	res.end(req.params.algo + " " + req.params.secret);
+});</code></pre>
+<pre class="fragment"><code>app.listen(31337);</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-1.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-2.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-3.png" class="console">
+					</section>
+
+					<section>
+						<h2>Crypto stdin</h2>
+						<br/>
+						<pre><code>
+var cipher = require('crypto')
+    .createCipher('aes192', 'secret');
+
+process.stdin.pipe(cipher).pipe(process.stdout);
+</code></pre>
+					</section>
+					
+					<section>
+						<h2>Crypto service</h2>
+						<br/>
+						<pre><code>var app = require('express')();</code></pre>
+<pre><code>app.get('/:algo/:secret', function(req, res) {
+    var cipher = require('crypto')
+        .createCipher(req.params.algo, req.params.secret);
+    req.pipe(cipher).pipe(res);
+});</code></pre>
+<pre><code>app.listen(31337);</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-4.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-5.png" class="console">
+					</section>
+
+					<section data-transition="none">
+						<img src="img/node-crypto-service-6.png" class="console">
+					</section>
+
 				</section>
 			</div>
 
