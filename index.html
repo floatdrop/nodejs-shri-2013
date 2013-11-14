@@ -1055,16 +1055,20 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 					<section data-background="img/san-clemente-dam-noaa.jpg"></section>
 
 					<section>
-						<h2>Streams Node.JS are</h2>
-						<h2 class="fragment">Push</h2>
+						<h2>Streams in Node.JS are <span class="fragment" style="color: yellow">Push</span></h2>
 					</section>
 
 					<section>
 						<img src="img/streams_chart.png" width="100%"/>
 					</section>
+					
+					<section>
+						<h2>ReadableStream. Events:</h2>
+						<h4>data, end, close, error, readable</h4>
+					</section>
 
 					<section>
-						<h2>Readable stream</h2>
+						<h2>ReadableStream</h2>
 						<h4><span style="color: yellow">data</span> event</h4>
 						<br/>
 						<pre><code>process.stdin.on('data', 
@@ -1074,7 +1078,12 @@ function(chunk) {
 					</section>
 
 					<section>
-						<h2>Writeable stream</h2>
+						<h2>WriteableStream. Events</h2>
+						<h4>finish, pipe, unpipe, drain</h4>
+					</section>
+
+					<section>
+						<h2>WriteableStream. Methods</h2>
 						<h4><span style="color: yellow">write</span> method</h4>
 						<br/>
 						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
@@ -1088,6 +1097,11 @@ function(chunk) {
 						<br/>
 						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: yellow">wait for the <u>drain</u> event before writing more data.</span></p>
 					</section>
+				</section>
+
+				<section>
+					<h2>Спасибо за внимение</h2>
+					<h3>Вопросы?</h3>
 				</section>
 			</div>
 
