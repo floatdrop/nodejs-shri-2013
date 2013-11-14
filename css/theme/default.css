@@ -14,13 +14,13 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #1a8437;
-  background: -moz-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1f9a41), color-stop(100%, #1a8437));
-  background: -webkit-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
-  background: -o-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
-  background: -ms-radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
-  background: radial-gradient(center, circle cover, #1f9a41 0%, #1a8437 100%);
+  background: black;
+  background: -moz-radial-gradient(center, circle cover, black 0%, black 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, black), color-stop(100%, black));
+  background: -webkit-radial-gradient(center, circle cover, black 0%, black 100%);
+  background: -o-radial-gradient(center, circle cover, black 0%, black 100%);
+  background: -ms-radial-gradient(center, circle cover, black 0%, black 100%);
+  background: radial-gradient(center, circle cover, black 0%, black 100%);
   background-color: #1a8437; }
 
 .reveal {
@@ -32,7 +32,7 @@ body {
 
 ::selection {
   color: white;
-  background: #ff5e99;
+  background: white;
   text-shadow: none; }
 
 /*********************************************
@@ -59,7 +59,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #dad500;
+  color: #da0000;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -68,13 +68,13 @@ body {
   transition: color .15s ease; }
 
 .reveal a:not(.image):hover {
-  color: #fffb41;
+  color: #ff4141;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #8d8a00; }
+  background: #8d0000; }
 
 /*********************************************
  * IMAGES
@@ -89,7 +89,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #dad500;
+  border-color: #da0000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -97,31 +97,31 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #dad500; }
+  border-right-color: #da0000; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #dad500; }
+  border-left-color: #da0000; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #dad500; }
+  border-bottom-color: #da0000; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #dad500; }
+  border-top-color: #da0000; }
 
 .reveal .controls div.navigate-left.enabled:hover {
-  border-right-color: #fffb41; }
+  border-right-color: #ff4141; }
 
 .reveal .controls div.navigate-right.enabled:hover {
-  border-left-color: #fffb41; }
+  border-left-color: #ff4141; }
 
 .reveal .controls div.navigate-up.enabled:hover {
-  border-bottom-color: #fffb41; }
+  border-bottom-color: #ff4141; }
 
 .reveal .controls div.navigate-down.enabled:hover {
-  border-top-color: #fffb41; }
+  border-top-color: #ff4141; }
 
 /*********************************************
  * PROGRESS BAR
@@ -130,7 +130,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #dad500;
+  background: #da0000;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

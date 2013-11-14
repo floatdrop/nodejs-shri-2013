@@ -24,7 +24,7 @@
 
 // Background generator
 @mixin bodyBackground() {
-	@include radial-gradient( rgba(26,132,55,1), rgba(31,154,65,1) );
+	@include radial-gradient( rgba(0,0,0,1), rgba(0,0,0,1) );
 }
 
 

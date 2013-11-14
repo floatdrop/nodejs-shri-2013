@@ -21,11 +21,11 @@ $headingTextShadow: 0px 3px 3px rgba(0,0,0,0.2);
 $heading1TextShadow: $headingTextShadow;
 
 // Links and actions
-$linkColor: #dad500;
+$linkColor: #da0000;
 $linkColorHover: lighten( $linkColor, 20% );
 
 // Text selection
-$selectionBackgroundColor: #FF5E99;
+$selectionBackgroundColor: #fff;
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden
