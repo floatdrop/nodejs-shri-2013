@@ -45,7 +45,7 @@
 					<section><img src="img/uhodi.jpg" width="400"/></section>
 				</section>
 				<section data-background="img/sea.png">
-					<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0) 50%)">
+					<div class="fragment" style="padding: 100px 50px; background: rgba(0,0,0,0.1) 10%">
 						<h1>Node.JS</h1>
 					</div>
 				</section>
@@ -76,26 +76,26 @@ end mouseUp
 						<h3>1987</h3>
 					</section>
 					<section data-background="img/lucas.png">
-						<div class="fragment" style="color: #000; padding: 100px 0px; background: radial-gradient(ellipse at center, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 80%)">
+						<div class="fragment" style="color: #000; padding: 100px 0px; background: rgba(255,255,255,0.8);">
 							<p>Расчитан на обработку событий</p>
 							<p class="fragment">Был написан за <span class="fragment" style="font-size: 48pt">10</span> дней</p>
 							<p class="fragment">Function as first-class objects</p>
 							<p class="fragment">Прототипное наследование из Self</p>
 						</div>
-						<h2 style="color: #000; position: relative; top: 100px;">1995</h2>
+						<h2 style="color: #000; position: relative; top: 100px;"><span style="background: rgba(255,255,255,0.8); padding: 10px 20px;">1995</span></h2>
 						<aside class="notes">Inheritance modifies the lookup procedure by extending the search to other objects. These objects are located via parent slots, which are a special kind of data slot. Any data slot can be designated a parent, by attaching an asterisk to the slot name.</aside>
 					</section>
 					<section data-background="img/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg">
-						<img class="fragment" width="300px" src="img/logo-jquery.png"/>
-						<h2 class="fragment" style="margin: 50px;">AJAX</h2>
-						<h2 style="position: relative; top: 100px;">2005</h2>
+						<img style="background: rgba(0,0,0,0.8); padding: 10px 20px;" class="fragment" width="300px" src="img/logo-jquery.png"/>
+						<h2 class="fragment" style="margin: 50px;"><span style="background: rgba(0,0,0,0.8); padding: 10px 20px;">AJAX</span></h2>
+						<h2 style="position: relative; top: 100px;"><span style="background: rgba(0,0,0,0.8); padding: 10px 20px;">2005</span></h2>
 					</section>
 					<section data-background="img/Johann_Peter_Krafft_005.jpg">
-						<div class="fragment" style="padding: 100px 50px; background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 60%)">
+						<div class="fragment" style="padding: 100px 50px; background: rgba(0,0,0,0.8)">
 							<h1>Node.JS</h1>
 							<h2>JavaScript on server</h2>
 						</div>
-						<h2 style="position: relative; top: 100px;">2009</h2>
+						<h2 style="position: relative; top: 100px;"><span style="background: rgba(0,0,0,0.8); padding: 10px 20px;">2009</span></h2>
 						<aside class="notes">
 The term Ajax was coined on 18 February 2005 by Jesse James Garrett in an article entitled "Ajax: A New Approach to Web Applications", based on techniques used on Google pages.[1]
 On 5 April 2006, the World Wide Web Consortium (W3C) released the first draft specification for the XMLHttpRequest object in an attempt to create an official web standard.[6]
@@ -986,7 +986,7 @@ Time per request: 3.780 ms</code></pre>
 						<h2>Crypto service</h2>
 						<br/>
 						<pre><code>var app = require('express')();</code></pre>
-<pre class="fragment"><code>app.get('/:algo/:secret', function(req, res) {
+<pre class="fragment"><code>app.post('/:algo/:secret', function(req, res) {
 	// Some magic should be applied here
 	res.end(req.params.algo + " " + req.params.secret);
 });</code></pre>
@@ -1040,7 +1040,7 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 						<img src="img/node-crypto-service-6.png" class="console">
 					</section>
 					
-					<section>
+					<!-- <section>
 						<h2><span style="color: yellow">Push</span> vs <span style="color: yellow">Pull</span> streams</h2>
 					</section>
 
@@ -1096,7 +1096,7 @@ function(chunk) {
 						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
 						<br/>
 						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: yellow">wait for the <u>drain</u> event before writing more data.</span></p>
-					</section>
+					</section> -->
 				</section>
 
 				<section>
