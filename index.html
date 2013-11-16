@@ -702,7 +702,7 @@ console.log("A: ", a);</code></pre>
 					<section data-transition="none">
 						<img src="img/node-modules-circ-7.png" class="console">
 					</section>
-					
+					<!--
 					<section>
 						<pre><code style="font-size: 22pt; line-height: 32pt;">var module = require('http');
 
@@ -720,6 +720,7 @@ console.log(require('http').globalAgent);</code></pre>
 						<h2>Unfinished copy</h2>
 						<img src="img/node-modules-circ-9.png" class="console">
 					</section>
+					-->
 				</section>
 
 				<section>
@@ -810,33 +811,33 @@ app.listen(3000);</code></pre>
                         data-background-size="100%"
                         data-transition="linear" 
                         data-background-transition="slide">
-                        <h2><a href="http://bit.ly/kantor-node" class="roll">bit.ly/kantor-node</a></h2>
+                        <h2><a href="http://bit.ly/kantor-node" style="color: white;" class="roll">bit.ly/kantor-node</a></h2>
                         <br/><br/><br/><br/>
                     </section>
 
 					<section data-background="img/libuv-github.png"></section>
 
 					<section>
-						<h2>node.cc</h2>
+						<h2>joyent/node - node.cc</h2>
 						<br/>
 						<img src="img/node-cc.png" width="100%"/>
 					</section>
 
 					<section>
-						<h2>env-inl.h</h2>
+						<h2>joyent/node - env-inl.h</h2>
 						<br/>
 						<img src="img/env-inl-h-2.png" width="100%"/>
 						<img src="img/env-inl-h-1.png" width="100%" class="fragment"/>
 					</section>
 
 					<section>
-						<h2>loop.c</h2>
+						<h2>joyent/libuv - loop.c</h2>
 						<br/>
 						<img src="img/loop-c-1.png" width="100%"/>
 					</section>
 
 					<section>
-						<h2>loop.c</h2>
+						<h2>joyent/libuv - loop.c</h2>
 						<br/>
 						<pre><code class="cpp">static int uv__loop_init(uv_loop_t* loop, int default_loop) {
 	// ...
@@ -866,13 +867,13 @@ app.listen(3000);</code></pre>
 					</section>
 
 					<section>
-						<h2>node.cc</h2>
+						<h2>joyent/node - node.cc</h2>
 						<br/>
 						<img src="img/node-cc.png" width="100%"/>
 					</section>
 
 					<section>
-						<h2>core.c&nbsp;<span style="color: #da0000; font-size: 22pt">:&nbsp;258</span></h2>
+						<h2>joyent/node - core.c&nbsp;<span style="color: #da0000; font-size: 22pt">:&nbsp;258</span></h2>
 						<br/>
 						<pre><code class="cpp">int uv_run(uv_loop_t* loop, uv_run_mode mode) {
 	r = uv__loop_alive(loop);
@@ -1038,7 +1039,7 @@ process.stdin.pipe(cipher).pipe(process.stdout);
 						<img src="img/node-crypto-service-6.png" class="console">
 					</section>
 					
-					<!-- <section>
+					<section>
 						<h2><span style="color: #da0000">Push</span> vs <span style="color: #da0000">Pull</span> streams</h2>
 					</section>
 
@@ -1094,7 +1095,7 @@ function(chunk) {
 						<pre><code>var backpressure = process.stdout.write('data');</code></pre>
 						<br/>
 						<p class="fragment">This return value is strictly advisory. You MAY continue to write, even if it returns false. However, writes will be buffered in memory, so it is best not to do this excessively. Instead, <span style="color: #da0000">wait for the <u>drain</u> event before writing more data.</span></p>
-					</section> -->
+					</section>	
 				</section>
 
 				<section>
